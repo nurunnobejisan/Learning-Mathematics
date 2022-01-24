@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:jisan/Age/views/home.dart';
 import 'package:jisan/screens/product_item.dart';
 import 'package:jisan/screens/product_page.dart';
 import 'package:jisan/utils/constants.dart';
@@ -43,12 +44,13 @@ class _LandingScreenState extends State<LandingScreen> {
 
   @override
   Widget build(BuildContext context) {
-
+    final height = MediaQuery.of(context).size.height;
     final TextTheme textTheme = Theme.of(context).textTheme;
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         body: LayoutBuilder(
+
           builder: (context, constraints) {
             return Column(
               children: [
@@ -107,11 +109,23 @@ class _LandingScreenState extends State<LandingScreen> {
                                     height: 5,
                                     width:  5,
                                     decoration: BoxDecoration(color: Colors.white24, borderRadius: BorderRadius.only(topRight: Radius.circular(20.0), bottomRight: Radius.circular(20.0))),
-                                    child: Icon(
-                                      Icons.menu,
-                                      color: Colors.black,
+                                    child: InkWell(
+                                      child: Icon(
+                                        Icons.menu,
+                                        color: Colors.black,
+                                      ),
+                                      onTap: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => HomePage(),
+                                          ),
+                                        );
+                                      },
                                     ),
+
                                   ),
+                                  
                                   fillColor: Colors.grey.shade100,
                                   filled: true,),
                               ),
@@ -168,7 +182,9 @@ class _LandingScreenState extends State<LandingScreen> {
                               ),
                             ),
                           ],
+
                         ),
+
                         Positioned(
                           top: -40,
                           left: 0,
@@ -206,7 +222,9 @@ class _LandingScreenState extends State<LandingScreen> {
                   ),
                 )
               ],
+
             );
+
           },
         ),
       ),
