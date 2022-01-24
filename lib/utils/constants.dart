@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 const COLOR_BLACK = Colors.black;
-const COLOR_ORANGE = Colors.deepOrange;
+const COLOR_ORANGE = Colors.green;
 const COLOR_GREY = Color(0xff9E9E9E);
 const COLOR_WHITE = Color(0xffFFA801);
 const COLOR_GREEN = Color(0xff6a5acd);

@@ -53,8 +53,8 @@ class ProductItem extends StatelessWidget {
                 RichText(
                     overflow: TextOverflow.ellipsis,
                     text: TextSpan(children: [
-                      WidgetSpan(child: Icon(Icons.location_on, color: Colors.red, size: 15)),
-                      TextSpan(text: "${productData['rest']}", style: textTheme.caption)
+                      WidgetSpan(child: Icon(Icons.auto_fix_high, color: Colors.red, size: 20)),
+                      TextSpan(text: "${productData['rest']}", style: textTheme.subtitle2)
                     ])),
                 addVerticalSpace(15),
                 Row(
@@ -65,7 +65,7 @@ class ProductItem extends StatelessWidget {
                           textAlign: TextAlign.left,
                           overflow: TextOverflow.ellipsis,
                           text: TextSpan(children: [
-                            WidgetSpan(child: Icon(Icons.star, color: Colors.orange, size: 15)),
+                            WidgetSpan(child: Icon(Icons.star, color: Colors.orange, size: 19)),
                             TextSpan(text: "${productData['rating']}", style: textTheme.subtitle2!.apply(fontWeightDelta: 4))
                           ])),
                     ),
