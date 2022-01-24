@@ -6,23 +6,23 @@ import 'package:jisan/utils/constants.dart';
 import 'package:jisan/utils/widget_functions.dart';
 
 const PRODUCT_DATA = [
-  {"image": "patygonet.png", "name": "Nurunnobe Jomadder", "rest": "Chittagong district", "rating": "4.5 ", "article number": 20, },
-  {"image": "burger.png", "name": "Ishak Howlader", "rest": "Rangpur District", "rating": "4.7 ", "article number": 10, },
-  {"image": "bejgonit.png", "name": "MD alamin mia", "rest": "Rajshahi district.", "rating": "4.2 ", "article number": 10, },
-  {"image": "jamati.png", "name": "Zihadul Islam", "rest": "Jashore district", "rating": "3.9 ", "article number": 15, },
-  {"image": "porimiti.png", "name": "Shahrear Tomal", "rest": "Sylhet district", "rating": "3.9 ", "article number": 15, },
-  {"image": "ganitikjuktiodokotha.png", "name": "Dinajpur district", "rest": "Comilla district", "rating": "3.9 ", "article number": 15, },
-  {"image": "bejgonit.png", "name": "Reasel Hassan", "rest": "Mymensingh district", "rating": "3.9 ", "article number": 15, },
+  {"image": "patygonet.png", "name": "পাটিগণিত", "rest": "Chittagong district", "rating": "4.5 ", "article number": 20, },
+  {"image": "bejgonit.png", "name": "বীজগণিত", "rest": "Rangpur District", "rating": "4.7 ", "article number": 10, },
+  {"image": "trikonomiti.png", "name": "ত্রিকোণমিতি", "rest": "Rajshahi district.", "rating": "4.2 ", "article number": 10, },
+  {"image": "porimiti.png", "name": "পরিমিতি", "rest": "Jashore district", "rating": "3.9 ", "article number": 15, },
+  {"image": "gonitalocona.png", "name": "গণিত আলোচনা", "rest": "Sylhet district", "rating": "3.9 ", "article number": 15, },
+  {"image": "ganitikjuktiodokotha.png", "গানিতিক যুক্তি ও দক্ষতা": "Dinajpur district", "rest": "Comilla district", "rating": "3.9 ", "article number": 15, },
+  {"image": "jamati.png", "name": "জ্যামিতি", "rest": "Mymensingh district", "rating": "3.9 ", "article number": 15, },
 ];
 
 const CATEGORIES = [
-  {"image": "patygonet.png", "name": "পাটিগণিত"},
-  {"image": "bejgonit.png", "name": "বীজগণিত"},
-  {"image": "bejgonit.png", "name": "ত্রিকোণমিতি"},
-  {"image": "bejgonit.png", "name": "জ্যামিতি"},
-  {"image": "porimiti.png", "name": "পরিমিতি"},
-  {"image": "porimiti.png", "name": "গণিত আলোচনা"},
-  {"image": "porimiti.png", "name": "গানিতিক যুক্তি ও দক্ষতা"},
+  {"image": "patygonet.png", "name": "Math Game"},
+  {"image": "bejgonit.png", "name": "Math Quiz"},
+  {"image": "bejgonit.png", "name": "Calculter"},
+  {"image": "bejgonit.png", "name": "Age Cal"},
+  {"image": "porimiti.png", "name": "BMI Cal"},
+  {"image": "porimiti.png", "name": "Currency"},
+  {"image": "porimiti.png", "name": "Temperate"},
 ];
 
 class LandingScreen extends StatefulWidget {
@@ -61,7 +61,7 @@ class _LandingScreenState extends State<LandingScreen> {
                           Container(
                             color: COLOR_GREEN,
                           ),
-                          Image.asset("assets/images/jamati.png"),
+                          Image.asset("assets/images/background.png"),
                           Padding(
                             padding: const EdgeInsets.all(10),
                             child: Column(
@@ -77,7 +77,7 @@ class _LandingScreenState extends State<LandingScreen> {
                                           color: Colors.white,
                                         ),
                                         child: Padding(
-                                          padding: const EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.all(10.0),
                                           child: Image.asset("assets/images/avatar.png"),
                                         )),
                                     addHorizontalSpace(20),
@@ -85,8 +85,9 @@ class _LandingScreenState extends State<LandingScreen> {
                                       flex: 7,
                                       child: Text(
                                         "“Pure mathematics is in its way, the poetry of logical ideas.”\n- Albert Einstein.",
-                                        style: textTheme.headline5!.apply(color: Colors.white),
+                                        style: textTheme.headline5!.apply(color: Colors.black),
                                       ),
+
                                     )
                                   ],
                                 ),
@@ -96,12 +97,13 @@ class _LandingScreenState extends State<LandingScreen> {
                                   cursorRadius: Radius.circular(10.0),
                                   style: TextStyle(color: Colors.white),
                                   decoration: InputDecoration(
+
                                       hintText: "গণিত বিষয়ে অনুসন্ধান করুন",
-                                      hintStyle: TextStyle(color: Colors.white),
-                                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(20.0), borderSide: BorderSide.none),
+                                      hintStyle: TextStyle(color: Colors.black),
+                                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0), borderSide: BorderSide.none),
                                       prefixIcon: Icon(
                                         Icons.search,
-                                        color: Colors.white,
+                                        color: Colors.black,
                                       ),
                                       suffixIcon: Container(
                                         height: 70,
@@ -109,11 +111,11 @@ class _LandingScreenState extends State<LandingScreen> {
                                         decoration: BoxDecoration(color: Colors.white24, borderRadius: BorderRadius.only(topRight: Radius.circular(20.0), bottomRight: Radius.circular(20.0))),
                                         child: Icon(
                                           Icons.menu,
-                                          color: Colors.white,
+                                          color: Colors.black,
                                         ),
                                       ),
-                                      filled: true,
-                                      fillColor: Colors.white24),
+                                    fillColor: Colors.grey.shade100,
+                                    filled: true,),
                                 ),
                                 addVerticalSpace(10),
                               ],
