@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:jisan/Age/views/home.dart';
+import 'package:jisan/currency.dart';
 import 'package:jisan/screens/product_item.dart';
 import 'package:jisan/screens/product_page.dart';
 import 'package:jisan/utils/constants.dart';
@@ -155,9 +156,19 @@ class _LandingScreenState extends State<LandingScreen> {
                                 Expanded(
                                   child: Center(),
                                 ),
-                                Text(
-                                  "View Articles > ",
-                                  style: textTheme.subtitle2!.apply(color: COLOR_ORANGE),
+                                InkWell(
+                                  child: Text(
+                                    "View Articles > ",
+                                    style: textTheme.subtitle2!.apply(color: COLOR_ORANGE),
+                                  ),
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => currency(),
+                                      ),
+                                    );
+                                  },
                                 ),
                                 addHorizontalSpace(10),
                               ],
