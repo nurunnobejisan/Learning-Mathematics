@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:jisan/Age/views/home.dart';
+import 'package:jisan/Mathgame/math.dart';
 import 'package:jisan/currency.dart';
 import 'package:jisan/screens/product_item.dart';
 import 'package:jisan/screens/product_page.dart';
@@ -149,16 +150,26 @@ class _LandingScreenState extends State<LandingScreen> {
                             addVerticalSpace(constraints.maxWidth * 0.35),
                             Row(
                               children: [
-                                Text(
-                                  "   Articles about Math",
-                                  style: textTheme.headline5,
+                                InkWell(
+                                  child: Text(
+                                    "   Math Game",
+                                    style: textTheme.headline5,
+                                  ),
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => Math(),
+                                      ),
+                                    );
+                                  },
                                 ),
                                 Expanded(
                                   child: Center(),
                                 ),
                                 InkWell(
                                   child: Text(
-                                    "View Articles > ",
+                                    "Currency > ",
                                     style: textTheme.subtitle2!.apply(color: COLOR_ORANGE),
                                   ),
                                   onTap: () {
