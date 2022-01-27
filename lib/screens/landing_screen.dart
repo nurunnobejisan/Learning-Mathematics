@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:jisan/Age/views/home.dart';
+import 'package:jisan/BMI/input_page.dart';
 import 'package:jisan/Mathgame/math.dart';
 import 'package:jisan/currency.dart';
 import 'package:jisan/screens/product_item.dart';
@@ -343,7 +344,7 @@ class _LandingScreenState extends State<LandingScreen> {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                            builder: (context) => Math(),
+                                            builder: (context) => InputPage(),
                                           ),
                                         );
                                       },
