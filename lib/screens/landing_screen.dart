@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:jisan/Age/views/home.dart';
 import 'package:jisan/Mathgame/math.dart';
@@ -253,70 +253,119 @@ class _LandingScreenState extends State<LandingScreen> {
                           left: 0,
                           child: Container(
                               width: constraints.maxWidth,
-                              height: constraints.maxWidth * 0.35,
+                              height: constraints.maxWidth * 0.45,
                               child: ListView(
                                   scrollDirection: Axis.horizontal,
                                   physics: BouncingScrollPhysics(),
                                   children: [
-                                    ListTile(
-                                        'Math Game',
-                                        Image.asset(
-                                          'assets/images/math game.png',
-                                          height: 70,
-                                          width: 80,
-
-                                        ),
-                                        const Color(0xFF6FC5DA)),
-
-                                    ListTile(
-                                        'Math Quiz',
-                                        Image.asset(
-                                          'assets/images/math quiz.png',
-                                          height: 82,
-                                          width: 80,
-                                        ),
-                                        const Color(0xFF615955)),
-                                    ListTile(
-                                        'Calculter',
-                                        Image.asset(
-                                          'assets/images/calculter.png',
-                                          height: 70,
-                                          width: 70,
-                                          fit: BoxFit.fitWidth,
-                                        ),
-                                        const Color(0xFFF39595)),
-                                    ListTile(
-                                        'Age Cal',
-                                        Image.asset(
-                                          'assets/images/age calcuter.png',
-                                          height: 70,
-                                          width: 70,
-                                        ),
-                                        const Color(0xFF8FC28A)),
-                                    ListTile(
-                                        'BMI Cal',
-                                        Image.asset(
-                                          'assets/images/BMI Cal.png',
-                                          height: 70,
-                                          width: 70,
-                                        ),
-                                        const Color(0xFF3B8079)),
-                                    ListTile(
-                                        'Currency',
-                                        Image.asset(
-                                          'assets/images/currency.png',
-                                          height: 70,
-                                          width: 70,
-                                        ),
-                                        const Color(0xFFF8B870)),
-                                    ListTile(
-                                        'Temperature',
-                                        Image.asset(
-                                          'assets/images/temperature.png',
-                                          height: 70,
-                                          width: 70,
-                                        ),
-                                        const Color(0xFFF8B870)),
+                                    GestureDetector(
+                                      child: ListTile(
+                                          'Math Game',
+                                          Image.asset(
+                                            'assets/images/math game.png',
+                                            height: 70,
+                                            width: 80,
+                                          ),
+                                          const Color(0xFF6FC5DA)),
+                                      onTap: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => Math(),
+                                          ),
+                                        );
+                                      },
+                                    ),
+                                    GestureDetector(
+                                      child: ListTile(
+                                          'Math Quiz',
+                                          Image.asset(
+                                            'assets/images/math quiz.png',
+                                            height: 82,
+                                            width: 80,
+                                          ),
+                                          const Color(0xFF6FC5DA)),
+                                      onTap: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => Math(),
+                                          ),
+                                        );
+                                      },
+                                    ),
+                                    GestureDetector(
+                                      child: ListTile(
+                                          'Calculter',
+                                          Image.asset(
+                                            'assets/images/calculter.png',
+                                            height: 82,
+                                            width: 80,
+                                          ),
+                                          const Color(0xFF6FC5DA)),
+                                      onTap: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => Math(),
+                                          ),
+                                        );
+                                      },
+                                    ),
+                                    GestureDetector(
+                                      child: ListTile(
+                                          'Age Cal',
+                                          Image.asset(
+                                            'assets/images/age calcuter.png',
+                                            height: 82,
+                                            width: 80,
+                                          ),
+                                          const Color(0xFF6FC5DA)),
+                                      onTap: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => HomePage(),
+                                          ),
+                                        );
+                                      },
+                                    ),
+                                    GestureDetector(
+                                      child: ListTile(
+                                          'BMI Cal',
+                                          Image.asset(
+                                            'assets/images/BMI Cal.png',
+                                            height: 82,
+                                            width: 80,
+                                          ),
+                                          const Color(0xFF6FC5DA)),
+                                      onTap: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => Math(),
+                                          ),
+                                        );
+                                      },
+                                    ),
+                                    GestureDetector(
+                                      child: ListTile(
+                                          'Temperature',
+                                          Image.asset(
+                                            'assets/images/temperature.png',
+                                            height: 82,
+                                            width: 80,
+                                          ),
+                                          const Color(0xFF6FC5DA)),
+                                      onTap: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => Math(),
+                                          ),
+                                        );
+                                      },
+                                    ),
                                     const SizedBox(width: 25.0)
                                   ])),
                         ),
@@ -332,27 +381,18 @@ class _LandingScreenState extends State<LandingScreen> {
     );
   }
 
-  void _pushScreen(BuildContext context, Widget screen) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => screen,
-      ),
-    );
-  }
-
   ListTile(String name, Image iconName, Color bgColor) {
     return Padding(
         padding: const EdgeInsets.only(right: 10, left: 5),
         child: Column(children: [
           const SizedBox(height: 19),
-
           Container(
-              padding: const EdgeInsets.only(right: 10,left: 15),
-              decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(100.200)),
+              padding: const EdgeInsets.only(right: 10, left: 15),
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10.20)),
               child: Center(child: iconName)),
           const SizedBox(height: 20.0),
-
           Container(
               width: 60.0,
               child: Center(
