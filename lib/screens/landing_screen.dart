@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:jisan/Age/views/home.dart';
 import 'package:jisan/BMI/input_page.dart';
 import 'package:jisan/Mathgame/math.dart';
-import 'package:jisan/currency.dart';
+import 'package:jisan/convetor&currency/Convetor.dart';
+import 'package:jisan/convetor&currency/currency.dart';
 import 'package:jisan/screens/product_item.dart';
 import 'package:jisan/screens/product_page.dart';
 import 'package:jisan/utils/constants.dart';
@@ -362,7 +363,25 @@ class _LandingScreenState extends State<LandingScreen> {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                            builder: (context) => Math(),
+                                            builder: (context) => convector(),
+                                          ),
+                                        );
+                                      },
+                                    ),
+                                    GestureDetector(
+                                      child: ListTile(
+                                          'Currency',
+                                          Image.asset(
+                                            'assets/images/currency.png',
+                                            height: 82,
+                                            width: 80,
+                                          ),
+                                          const Color(0xFF6FC5DA)),
+                                      onTap: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => currency(),
                                           ),
                                         );
                                       },
