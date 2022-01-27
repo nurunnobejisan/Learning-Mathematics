@@ -9,23 +9,55 @@ import 'package:jisan/utils/constants.dart';
 import 'package:jisan/utils/widget_functions.dart';
 
 const PRODUCT_DATA = [
-  {"image": "patygonet.png", "name": "পাটিগণিত", "rest": "Chittagong district", "rating": "4.5 ", "article number": 20, },
-  {"image": "bejgonit.png", "name": "বীজগণিত", "rest": "Rangpur District", "rating": "4.7 ", "article number": 10, },
-  {"image": "trikonomiti.png", "name": "ত্রিকোণমিতি", "rest": "Rajshahi district.", "rating": "4.2 ", "article number": 10, },
-  {"image": "porimiti.png", "name": "পরিমিতি", "rest": "Jashore district", "rating": "3.9 ", "article number": 15, },
-  {"image": "gonitalocona.png", "name": "গণিত আলোচনা", "rest": "Sylhet district", "rating": "3.9 ", "article number": 15, },
-  {"image": "ganitikjuktiodokotha.png","name":"যুক্তি ও দক্ষতা", "rest": "Comilla district", "rating": "3.9 ", "article number": 15, },
-  {"image": "jamati.png", "name": "জ্যামিতি", "rest": "Mymensingh district", "rating": "3.9 ", "article number": 15, },
-];
-
-const CATEGORIES = [
-  {"image": "math game.png", "name": "Math Game"},
-  {"image": "math quiz.png", "name": "Math Quiz"},
-  {"image": "calculter.png", "name": "Calculter"},
-  {"image": "age calcuter.png", "name": "Age Cal"},
-  {"image": "BMI Cal.png", "name": "BMI Cal"},
-  {"image": "currency.png", "name": "Currency"},
-  {"image": "temperature.png", "name": "Temperate"},
+  {
+    "image": "patygonet.png",
+    "name": "পাটিগণিত",
+    "rest": "Nurunnobe Jomadder",
+    "rating": "4.5 ",
+    "article number": 20,
+  },
+  {
+    "image": "bejgonit.png",
+    "name": "বীজগণিত",
+    "rest": "MD Al Amin Mia",
+    "rating": "4.7 ",
+    "article number": 10,
+  },
+  {
+    "image": "trikonomiti.png",
+    "name": "ত্রিকোণমিতি",
+    "rest": "Zihadul Islam",
+    "rating": "4.2 ",
+    "article number": 10,
+  },
+  {
+    "image": "porimiti.png",
+    "name": "পরিমিতি",
+    "rest": "HM Imam Hossan",
+    "rating": "3.9 ",
+    "article number": 15,
+  },
+  {
+    "image": "gonitalocona.png",
+    "name": "গণিত আলোচনা",
+    "rest": "ER Jebon",
+    "rating": "3.9 ",
+    "article number": 15,
+  },
+  {
+    "image": "ganitikjuktiodokotha.png",
+    "name": "যুক্তি ও দক্ষতা",
+    "rest": "Comilla district",
+    "rating": "3.9 ",
+    "article number": 15,
+  },
+  {
+    "image": "jamati.png",
+    "name": "জ্যামিতি",
+    "rest": "Phis Khan II",
+    "rating": "3.9 ",
+    "article number": 15,
+  },
 ];
 
 class LandingScreen extends StatefulWidget {
@@ -46,13 +78,11 @@ class _LandingScreenState extends State<LandingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
     final TextTheme textTheme = Theme.of(context).textTheme;
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         body: LayoutBuilder(
-
           builder: (context, constraints) {
             return Column(
               children: [
@@ -75,21 +105,22 @@ class _LandingScreenState extends State<LandingScreen> {
                                   Container(
                                       width: 70,
                                       decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(50.0),
+                                        borderRadius:
+                                            BorderRadius.circular(50.0),
                                         color: Colors.white,
                                       ),
                                       child: Padding(
                                         padding: const EdgeInsets.all(0.0),
-                                        child: Image.asset("assets/images/avatar.png"),
+                                        child: Image.asset(
+                                            "assets/images/avatar.png"),
                                       )),
                                   addHorizontalSpace(60),
                                   Expanded(
                                     flex: 8,
                                     child: Text(
-                                      "“Pure mathematics is in its way, the poetry of logical ideas.”\n- Albert Einstein.",
-                                      style: textTheme.headline5!.apply(color: Colors.white)
-                                    ),
-
+                                        "“Pure mathematics is in its way, the poetry of logical ideas.”\n- Albert Einstein.",
+                                        style: textTheme.headline5!
+                                            .apply(color: Colors.white)),
                                   )
                                 ],
                               ),
@@ -99,18 +130,24 @@ class _LandingScreenState extends State<LandingScreen> {
                                 cursorRadius: Radius.circular(20.0),
                                 style: TextStyle(color: Colors.black),
                                 decoration: InputDecoration(
-
                                   hintText: " গণিত বিষয়ে অনুসন্ধান করুন",
                                   hintStyle: TextStyle(color: Colors.black),
-                                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(13.0), borderSide: BorderSide.none),
+                                  border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(13.0),
+                                      borderSide: BorderSide.none),
                                   prefixIcon: Icon(
                                     Icons.search,
                                     color: Colors.black,
                                   ),
                                   suffixIcon: Container(
                                     height: 5,
-                                    width:  5,
-                                    decoration: BoxDecoration(color: Colors.white24, borderRadius: BorderRadius.only(topRight: Radius.circular(20.0), bottomRight: Radius.circular(20.0))),
+                                    width: 5,
+                                    decoration: BoxDecoration(
+                                        color: Colors.white24,
+                                        borderRadius: BorderRadius.only(
+                                            topRight: Radius.circular(20.0),
+                                            bottomRight:
+                                                Radius.circular(20.0))),
                                     child: InkWell(
                                       child: Icon(
                                         Icons.menu,
@@ -125,11 +162,10 @@ class _LandingScreenState extends State<LandingScreen> {
                                         );
                                       },
                                     ),
-
                                   ),
-                                  
                                   fillColor: Colors.grey.shade100,
-                                  filled: true,),
+                                  filled: true,
+                                ),
                               ),
                               addVerticalSpace(20),
                             ],
@@ -170,7 +206,8 @@ class _LandingScreenState extends State<LandingScreen> {
                                 InkWell(
                                   child: Text(
                                     "Currency > ",
-                                    style: textTheme.subtitle2!.apply(color: COLOR_ORANGE),
+                                    style: textTheme.subtitle2!
+                                        .apply(color: COLOR_ORANGE),
                                   ),
                                   onTap: () {
                                     Navigator.push(
@@ -191,65 +228,139 @@ class _LandingScreenState extends State<LandingScreen> {
                               child: Row(
                                 children: PRODUCT_DATA
                                     .map((data) => InkWell(
-                                  onTap: () {
-                                    _focusNode.unfocus();
-                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => ProductPage(productData: data)));
-                                  },
-                                  child: ProductItem(
-                                    width: constraints.maxWidth * 0.50,
-                                    productData: data,
-                                  ),
-                                ))
+                                          onTap: () {
+                                            _focusNode.unfocus();
+                                            Navigator.of(context).push(
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        ProductPage(
+                                                            productData:
+                                                                data)));
+                                          },
+                                          child: ProductItem(
+                                            width: constraints.maxWidth * 0.50,
+                                            productData: data,
+                                          ),
+                                        ))
                                     .toList(),
                               ),
                             ),
                           ],
-
                         ),
-
                         Positioned(
                           top: -40,
                           left: 0,
                           child: Container(
-                            width: constraints.maxWidth,
-                            height: constraints.maxWidth * 0.35,
-                            child: ListView(
-                              scrollDirection: Axis.horizontal,
-                              physics: BouncingScrollPhysics(),
-                              children: CATEGORIES
-                                  .map((category) => Container(
-                                margin: const EdgeInsets.only(right: 10.0),
-                                width: constraints.maxWidth * 0.25,
-                                decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(20.0)),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(10.0),
-                                  child: Column(
-                                    children: [
-                                      Image.asset("assets/images/${category['image']}"),
-                                      addVerticalSpace(10),
-                                      Text(
-                                        "${category['name']}",
-                                        style: textTheme.bodyText2!.apply(color: COLOR_BLACK),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              ))
-                                  .toList(),
-                            ),
-                          ),
+                              width: constraints.maxWidth,
+                              height: constraints.maxWidth * 0.35,
+                              child: ListView(
+                                  scrollDirection: Axis.horizontal,
+                                  physics: BouncingScrollPhysics(),
+                                  children: [
+                                    ListTile(
+                                        'Math Game',
+                                        Image.asset(
+                                          'assets/images/math game.png',
+                                          height: 70,
+                                          width: 80,
+
+                                        ),
+                                        const Color(0xFF6FC5DA)),
+
+                                    ListTile(
+                                        'Math Quiz',
+                                        Image.asset(
+                                          'assets/images/math quiz.png',
+                                          height: 82,
+                                          width: 80,
+                                        ),
+                                        const Color(0xFF615955)),
+                                    ListTile(
+                                        'Calculter',
+                                        Image.asset(
+                                          'assets/images/calculter.png',
+                                          height: 70,
+                                          width: 70,
+                                          fit: BoxFit.fitWidth,
+                                        ),
+                                        const Color(0xFFF39595)),
+                                    ListTile(
+                                        'Age Cal',
+                                        Image.asset(
+                                          'assets/images/age calcuter.png',
+                                          height: 70,
+                                          width: 70,
+                                        ),
+                                        const Color(0xFF8FC28A)),
+                                    ListTile(
+                                        'BMI Cal',
+                                        Image.asset(
+                                          'assets/images/BMI Cal.png',
+                                          height: 70,
+                                          width: 70,
+                                        ),
+                                        const Color(0xFF3B8079)),
+                                    ListTile(
+                                        'Currency',
+                                        Image.asset(
+                                          'assets/images/currency.png',
+                                          height: 70,
+                                          width: 70,
+                                        ),
+                                        const Color(0xFFF8B870)),
+                                    ListTile(
+                                        'Temperature',
+                                        Image.asset(
+                                          'assets/images/temperature.png',
+                                          height: 70,
+                                          width: 70,
+                                        ),
+                                        const Color(0xFFF8B870)),
+                                    const SizedBox(width: 25.0)
+                                  ])),
                         ),
                       ],
                     ),
                   ),
                 )
               ],
-
             );
-
           },
         ),
       ),
     );
+  }
+
+  void _pushScreen(BuildContext context, Widget screen) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => screen,
+      ),
+    );
+  }
+
+  ListTile(String name, Image iconName, Color bgColor) {
+    return Padding(
+        padding: const EdgeInsets.only(right: 10, left: 5),
+        child: Column(children: [
+          const SizedBox(height: 19),
+
+          Container(
+              padding: const EdgeInsets.only(right: 10,left: 15),
+              decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(100.200)),
+              child: Center(child: iconName)),
+          const SizedBox(height: 20.0),
+
+          Container(
+              width: 60.0,
+              child: Center(
+                  child: Text(name,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                          fontFamily: 'nunito',
+                          fontSize: 12.0,
+                          color: Color(0xFF3C2960)))))
+        ]));
   }
 }
