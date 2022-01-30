@@ -88,12 +88,12 @@ class _currency extends State<currency> {
     }
 
     return MaterialApp(
-      title: 'Currency Converter App',
-      theme: ThemeData(scaffoldBackgroundColor: Color.fromRGBO(1, 36, 81, 1)),
+      title: 'মুদ্রা রূপান্তরকারী',
+      theme: ThemeData(scaffoldBackgroundColor: const Color.fromRGBO(20, 193, 185, 1.0)),
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Color.fromRGBO(1, 36, 81, 1),
-          title: const Text('Currency Converter App'),
+          backgroundColor: const Color.fromRGBO(20, 193, 185, 1.0),
+          title: const Text('মুদ্রা রূপান্তরকারী'),
         ),
         body: Center(
           child: SingleChildScrollView(
@@ -101,15 +101,15 @@ class _currency extends State<currency> {
               children: [
                 Container(
                     decoration:
-                    BoxDecoration(color: Color.fromRGBO(18, 20, 27, 1)),
-                    padding: EdgeInsets.all(20),
-                    margin: EdgeInsets.all(30),
+                    const BoxDecoration(color: Color.fromRGBO(18, 20, 27, 1)),
+                    padding: const EdgeInsets.all(20),
+                    margin: const EdgeInsets.all(30),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         DropdownButton(
-                            dropdownColor: Color.fromRGBO(18, 20, 27, 1),
-                            style: TextStyle(color:Colors.white),
+                            dropdownColor: const Color.fromRGBO(18, 20, 27, 1),
+                            style: const TextStyle(color:Colors.white),
                             value: selected,
                             items: items.map((String items) {
                               return DropdownMenuItem(
@@ -121,25 +121,25 @@ class _currency extends State<currency> {
                                 selected = newValue.toString();
                               });
                             }),
-                        Text(getlabel(selected), style: TextStyle(color:Colors.white54),),
-                        SizedBox(height:20),
+                        Text(getlabel(selected), style: const TextStyle(color:Colors.white54),),
+                        const SizedBox(height:20),
                         Row(children: [
-                          Text('\$', style: TextStyle(color:Colors.white54, fontSize: 28)),
-                          SizedBox(width:10),
+                          const Text('\$', style: TextStyle(color:Colors.white54, fontSize: 28)),
+                          const SizedBox(width:10),
                           Expanded(child: TextField(
-                              style : TextStyle(color: Colors.white, fontSize: 20,),
+                              style : const TextStyle(color: Colors.white, fontSize: 20,),
                               keyboardType: TextInputType.number,
                               controller: controller)),
 
                         ],
 
                         ),
-                        SizedBox(height:20)
+                        const SizedBox(height:20)
                       ],
 
 
                     )),
-                SizedBox(height:20),
+                const SizedBox(height:20),
 
                 Row(
                   children: [
@@ -160,27 +160,27 @@ class _currency extends State<currency> {
                       },
 
                       child: Container(
-                        margin: EdgeInsets.only(left:30,),
-                        color:Color.fromRGBO(18, 20, 27, 1),
-                        padding: EdgeInsets.fromLTRB(40, 20, 40, 20),
-                        child: Text('=', style: TextStyle(color:Colors.white54, fontSize: 28)),
+                        margin: const EdgeInsets.only(left:30,),
+                        color:const Color.fromRGBO(39, 47, 81, 1.0),
+                        padding: const EdgeInsets.fromLTRB(40, 20, 40, 20),
+                        child: const Text('=', style: TextStyle(color:Colors.white54, fontSize: 28)),
                       ),
                     ),
                   ],
                 ),
 
-                SizedBox(height:20),
+                const SizedBox(height:20),
                 Container(
                     decoration:
-                    BoxDecoration(color: Color.fromRGBO(18, 20, 27, 1)),
-                    padding: EdgeInsets.all(20),
-                    margin: EdgeInsets.all(30),
+                    const BoxDecoration(color: Color.fromRGBO(18, 20, 27, 1)),
+                    padding: const EdgeInsets.all(20),
+                    margin: const EdgeInsets.all(30),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         DropdownButton(
-                            dropdownColor: Color.fromRGBO(18, 20, 27, 1),
-                            style: TextStyle(color:Colors.white),
+                            dropdownColor: const Color.fromRGBO(18, 20, 27, 1),
+                            style: const TextStyle(color:Colors.white),
                             value: toselected,
                             items: items.map((String items) {
                               return DropdownMenuItem(
@@ -192,20 +192,20 @@ class _currency extends State<currency> {
                                 toselected = newValue.toString();
                               });
                             }),
-                        Text(getlabel(toselected), style: TextStyle(color:Colors.white54),),
-                        SizedBox(height:20),
+                        Text(getlabel(toselected), style: const TextStyle(color:Colors.white54),),
+                        const SizedBox(height:20),
                         Row(children: [
-                          Text('\$', style: TextStyle(color:Colors.white54, fontSize: 28)),
-                          SizedBox(width:10),
+                          const Text('\৳', style: TextStyle(color:Colors.white54, fontSize: 28)),
+                          const SizedBox(width:10),
                           Expanded(child: TextField(
-                              style : TextStyle(color: Colors.white, fontSize: 20,),
+                              style : const TextStyle(color: Colors.white, fontSize: 20,),
                               enabled: false,
                               controller: resultplace)),
 
                         ],
 
                         ),
-                        SizedBox(height:20)
+                        const SizedBox(height:20)
                       ],
 
 
