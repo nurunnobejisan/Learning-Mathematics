@@ -30,7 +30,7 @@ class _InputPageState extends State<InputPage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('BMI CALCULATOR'),
+        title: const Text('BMI CALCULATOR',),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,

@@ -10,22 +10,24 @@ void main() {
       statusBarIconBrightness: Brightness.light,
       statusBarBrightness: Brightness.dark
   ));
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: COLOR_GREEN));
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(statusBarColor: COLOR_GREEN));
     return LayoutBuilder(builder: (context, constraints) {
       return MaterialApp(
-        supportedLocales: [
-          const Locale('en', 'US'), // English
+        supportedLocales: const [
+          Locale('en', 'US'), // English
         ],
         debugShowCheckedModeBanner: false,
         title: 'Screen 2',
         theme: ThemeData(textTheme: defaultText),
-        home: LandingScreen(),
+        home: const LandingScreen(),
       );
     });
   }

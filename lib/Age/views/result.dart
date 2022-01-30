@@ -51,12 +51,12 @@ class _ResultPageState extends State<ResultPage> {
               child: Column(
                 children: [
                   CustomListTile(
-                    leading: "Date of birth",
+                    leading: "জন্মতারিখ",
                     trailing: getFormatedDate(selectedBithDate),
                   ),
                   SizedBox(height: 20,),
                   CustomListTile(
-                    leading: "Todays",
+                    leading: "আজকের",
                     trailing: getFormatedDate(selectedCurrentDate),
                   ),
                 ],
@@ -80,13 +80,13 @@ class _ResultPageState extends State<ResultPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("Age"),
+                          Text("বয়স"),
                           Text.rich(
                           TextSpan(
                             children: [
                               TextSpan(text: AgeCalculator.age(selectedBithDate, today: selectedCurrentDate).years.toString(), style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28),),
                               TextSpan(
-                                text: ' Years',
+                                text: ' বছর',
                                 style: TextStyle(fontWeight: FontWeight.normal),
                               ),
                             ],
@@ -104,7 +104,7 @@ class _ResultPageState extends State<ResultPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("Next Birthday"),
+                          Text("পরবর্তী জন্মদিন"),
                           Text(AgeCalculator.findDayName().toString(), style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),),
                           Text("${AgeCalculator.timeToNextBirthday(selectedBithDate, fromDate: selectedCurrentDate).months} Months | ${AgeCalculator.timeToNextBirthday(selectedBithDate, fromDate: selectedCurrentDate).days} Days"),
                         ],
@@ -124,7 +124,7 @@ class _ResultPageState extends State<ResultPage> {
               ),
               child: Column(
                 children: [
-                  Text("Age in", style: TextStyle(color: textColor, fontSize: 18, fontWeight: FontWeight.w700),),
+                  Text("বয়স মধ্যে", style: TextStyle(color: textColor, fontSize: 18, fontWeight: FontWeight.w700),),
                   SizedBox(height: 20,),
                   Container(
                     child: Row(
@@ -135,12 +135,12 @@ class _ResultPageState extends State<ResultPage> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               SummaryCardBuilder(
-                                title: "Years",
+                                title: "বছর",
                                 subTitle: AgeCalculator.age(selectedBithDate, today: selectedCurrentDate).years.toString(),
                               ),
                               SizedBox(height: 20,),
                               SummaryCardBuilder(
-                                title: "Weeks",
+                                title: "সপ্তাহ",
                                 subTitle: (AgeCalculator.age(selectedBithDate, today: selectedCurrentDate).years * 52).toString(),
                                 fontSize: 14,
                               ),
@@ -151,12 +151,12 @@ class _ResultPageState extends State<ResultPage> {
                           child: Column(
                             children: [
                               SummaryCardBuilder(
-                                title: "Months",
+                                title: "মাস",
                                 subTitle: (AgeCalculator.age(selectedBithDate, today: selectedCurrentDate).years * 12).toString(),
                               ),
                               SizedBox(height: 20,),
                               SummaryCardBuilder(
-                                title: "Hours",
+                                title: "ঘন্টার",
                                 subTitle: AgeCalculator.hoursBetween(selectedBithDate, selectedCurrentDate).toString(),
                                 fontSize: 14,
                               ),
@@ -167,12 +167,12 @@ class _ResultPageState extends State<ResultPage> {
                           child: Column(
                             children: [
                               SummaryCardBuilder(
-                                title: "Days",
+                                title: "দিন",
                                 subTitle: AgeCalculator.daysBetween(selectedBithDate, selectedCurrentDate).toString(),
                               ),
                               SizedBox(height: 20,),
                               SummaryCardBuilder(
-                                title: "Minutes",
+                                title: "মিনিট",
                                 subTitle: AgeCalculator.minutesBetween(selectedBithDate, selectedCurrentDate).toString(),
                                 fontSize: 14,
                               ),
@@ -201,7 +201,7 @@ class _ResultPageState extends State<ResultPage> {
                       onPressed: (){
                         Navigator.pop(context);
                       },
-                      buttonLevel: "Re-Calculate",
+                      buttonLevel: "পুনরায় গণনা করুন",
                     ),
                   ),
                 ],

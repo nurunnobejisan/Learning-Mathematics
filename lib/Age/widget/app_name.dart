@@ -16,8 +16,8 @@ class AppName extends StatelessWidget {
         children: [
           Container(
             alignment: Alignment.centerRight,
-            padding: EdgeInsets.only(left: 20),
-            child: Text("Math",
+            padding: const EdgeInsets.only(left: 20),
+            child: const Text("Math",
               style: TextStyle(
               fontSize: 28, 
               fontWeight: FontWeight.w700, 

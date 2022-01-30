@@ -3,15 +3,15 @@
 import 'package:flutter/material.dart';
 
 const Kbottomcontainerheight = 80.0;
-const KactiveCardcolor = Color(0xFF290D69);
+const KactiveCardcolor = Color(0xFF7F67B3);
 const KinactiveCardColor = Color(0xfe71c1c);
-const Kbottomcontainercolor = Colors.brown;
+const Kbottomcontainercolor = Colors.greenAccent;
 const KmaxsliderRange = 220;
 const KminsliderRange = 120;
 
 const KlabelTextStyle = TextStyle(
-  fontSize: 18,
-  color: Colors.grey,
+  fontSize: 20,
+  color: Colors.black,
 );
 
 const numberTextStyle = TextStyle(fontSize: 50, fontWeight: FontWeight.w900);
@@ -21,7 +21,7 @@ const KTitleTextStyle = TextStyle(fontSize: 50, fontWeight: FontWeight.bold);
 const KResultTextStyle = TextStyle(
   color: Colors.greenAccent,
   fontWeight: FontWeight.bold,
-  fontSize: 40,
+  fontSize: 50,
 );
 
 const KBmiTextStyle = TextStyle(

@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> {
             Container(
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: Text(
-                'Discover exactly how old you are and how many days there are until your next birthday.',
+                'আপনার বয়স ঠিক কত এবং আপনার পরবর্তী জন্মদিন পর্যন্ত কত দিন আছে তা আবিষ্কার করুন।',
                 style: TextStyle(
                   fontSize: 18, 
                   height: 1.5,
@@ -57,23 +57,20 @@ class _HomePageState extends State<HomePage> {
             ),
             Spacer(),
             Container(
-              child: SvgPicture.asset(
-                  "assets/gift.svg",
-                  width: 120,
+              child: Image.asset("assets/images/age calcuter.png",width: 120,
                   height: 120,
-                  semanticsLabel: 'Acme Logo'
-              ),
+                  ),
             ),
 
             Spacer(),
             DatePickerField(
-              level: 'Select date of birth',
+              level: 'জন্ম তারিখ নির্বাচন করুন',
               onTap: ()=> _selectDate(context, selectedBithDate, "BirthDate" ),
               hintText: "${getFormatedDate(selectedBithDate)}",
             ),
             SizedBox(height: 10,),
             DatePickerField(
-              level: 'Select today\'s date',
+              level: 'আজকের তারিখ\ নির্বাচন করুন',
               onTap: ()=> _selectDate(context, selectedCurrentDate, "CurrentDate"),
               hintText: "${getFormatedDate(selectedCurrentDate)}",
             ),
@@ -90,7 +87,7 @@ class _HomePageState extends State<HomePage> {
                   Positioned(
                     top: 40,
                     child: CustomLargeButton(
-                      buttonLevel: "Calculate",
+                      buttonLevel: "গণনা",
                       onPressed: (){
                         Route route = MaterialPageRoute(builder: (context)=>ResultPage());
                         Navigator.push(context, route);

@@ -6,7 +6,8 @@ class ProductItem extends StatelessWidget {
   final double width;
   final dynamic productData;
 
-  const ProductItem({Key? key, required this.width,required this.productData}) : super(key: key);
+  const ProductItem({Key? key, required this.width, required this.productData})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,9 +42,9 @@ class ProductItem extends StatelessWidget {
               children: [
                 Center(
                     child: Image.asset(
-                      "assets/images/${productData['image']}",
-                      width: width * 0.80,
-                    )),
+                  "assets/images/${productData['image']}",
+                  width: width * 0.80,
+                )),
                 Expanded(child: Center()),
                 Text(
                   "${productData['name']}",
@@ -53,8 +54,12 @@ class ProductItem extends StatelessWidget {
                 RichText(
                     overflow: TextOverflow.ellipsis,
                     text: TextSpan(children: [
-                      WidgetSpan(child: Icon(Icons.auto_fix_high, color: Colors.red, size: 20)),
-                      TextSpan(text: "${productData['rest']}", style: textTheme.subtitle2)
+                      WidgetSpan(
+                          child: Icon(Icons.auto_fix_high,
+                              color: Colors.red, size: 20)),
+                      TextSpan(
+                          text: "${productData['rest']}",
+                          style: textTheme.subtitle2)
                     ])),
                 addVerticalSpace(15),
                 Row(
@@ -65,18 +70,25 @@ class ProductItem extends StatelessWidget {
                           textAlign: TextAlign.left,
                           overflow: TextOverflow.ellipsis,
                           text: TextSpan(children: [
-                            WidgetSpan(child: Icon(Icons.star, color: Colors.orange, size: 19)),
-                            TextSpan(text: "${productData['rating']}", style: textTheme.subtitle2!.apply(fontWeightDelta: 4))
+                            WidgetSpan(
+                                child: Icon(Icons.star,
+                                    color: Colors.orange, size: 19)),
+                            TextSpan(
+                                text: "${productData['rating']}",
+                                style: textTheme.subtitle2!
+                                    .apply(fontWeightDelta: 4))
                           ])),
                     ),
                     Expanded(
-
                       child: RichText(
                           textAlign: TextAlign.right,
                           overflow: TextOverflow.ellipsis,
                           text: TextSpan(children: [
+                            TextSpan(
+                                text: "${productData['article number']}",
+                                style: textTheme.headline5!
+                                    .apply(color: COLOR_ORANGE))
 
-                            TextSpan(text: "${productData['article number']}", style: textTheme.headline5!.apply(color: COLOR_ORANGE))
                           ])),
                     ),
                   ],

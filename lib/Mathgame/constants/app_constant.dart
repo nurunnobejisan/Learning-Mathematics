@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:jisan/Mathgame/constants/app_strings.dart';
 
 class Sabitler {
-  static const mainbackgroundColor = Color(0xff232323);
+  static const mainbackgroundColor = Color(0xff654a2e);
   static const mainAppBarBackgroundColor = Color(0xff232323);
 
   static const appBarTitle = Center(child: Text(Strings.appName));
@@ -16,10 +16,10 @@ class Sabitler {
     textStyle: const TextStyle(
         fontSize: 26, color: Colors.white, fontWeight: FontWeight.bold),
   );
-  static const plusGameColor = Color(0xffA5AAA3);
+  static const plusGameColor = Color(0xffb8a31a);
   static const plusGameShape = RoundedRectangleBorder(
     side: BorderSide(
-      color: Color(0x0ff7dbbb),
+      color: Color(0x0fe28e30),
       width: 5,
     ),
     borderRadius: BorderRadius.only(
@@ -28,7 +28,7 @@ class Sabitler {
     ),
   );
 
-  static const minusGameColor = Color(0xff812F33);
+  static const minusGameColor = Color(0xff6854cf);
   static const minusGameShape = RoundedRectangleBorder(
     side: BorderSide(
       color: Color(0x0ff7dbbb),
@@ -36,7 +36,7 @@ class Sabitler {
     ),
   );
 
-  static const divideGameColor = Color(0xff705E78);
+  static const divideGameColor = Color(0xff27ae9a);
   static const divideGameShape = RoundedRectangleBorder(
     side: BorderSide(
       color: Color(0x0ff7dbbb),
@@ -44,7 +44,7 @@ class Sabitler {
     ),
   );
 
-  static const multiplyGameColor = Color(0xff45848f);
+  static const multiplyGameColor = Color(0xffba2158);
   static const multiplyGameShape = RoundedRectangleBorder(
     side: BorderSide(
       color: Color(0x0ff7dbbb),
