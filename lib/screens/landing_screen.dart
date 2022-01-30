@@ -3,6 +3,7 @@ import 'package:jisan/Age/views/home.dart';
 import 'package:jisan/BMI/input_page.dart';
 import 'package:jisan/Mathgame/math.dart';
 import 'package:jisan/convetor&currency/Convetor.dart';
+import 'package:jisan/convetor&currency/button.dart';
 import 'package:jisan/convetor&currency/currency.dart';
 import 'package:jisan/screens/product_item.dart';
 import 'package:jisan/screens/product_page.dart';
@@ -322,7 +323,7 @@ class _LandingScreenState extends State<LandingScreen> {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                            builder: (context) => Math(),
+                                            builder: (context) => Calculator(),
                                           ),
                                         );
                                       },
