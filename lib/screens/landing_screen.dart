@@ -5,7 +5,7 @@ import 'package:jisan/Game/game.dart';
 import 'package:jisan/Mathgame/math.dart';
 import 'package:jisan/convetor&currency/Convetor.dart';
 import 'package:jisan/convetor&currency/button.dart';
-import 'package:jisan/convetor&currency/currency.dart';
+import 'package:jisan/convetor&currency/main.dart';
 import 'package:jisan/screens/product.dart';
 import 'package:jisan/screens/product_item.dart';
 import 'package:jisan/screens/product_page.dart';
@@ -161,7 +161,7 @@ class _LandingScreenState extends State<LandingScreen> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => const currency(),
+                                        builder: (context) => currency(),
                                       ),
                                     );
                                   },
@@ -329,8 +329,7 @@ class _LandingScreenState extends State<LandingScreen> {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                            builder: (context) =>
-                                                const currency(),
+                                            builder: (context) => currency(),
                                           ),
                                         );
                                       },
