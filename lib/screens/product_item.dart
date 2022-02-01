@@ -45,7 +45,7 @@ class ProductItem extends StatelessWidget {
                   "assets/images/${productData['image']}",
                   width: width * 0.80,
                 )),
-                Expanded(child: Center()),
+                const Expanded(child: Center()),
                 Text(
                   "${productData['name']}",
                   style: textTheme.headline6,
@@ -54,7 +54,7 @@ class ProductItem extends StatelessWidget {
                 RichText(
                     overflow: TextOverflow.ellipsis,
                     text: TextSpan(children: [
-                      WidgetSpan(
+                      const WidgetSpan(
                           child: Icon(Icons.auto_fix_high,
                               color: Colors.red, size: 20)),
                       TextSpan(
@@ -70,7 +70,7 @@ class ProductItem extends StatelessWidget {
                           textAlign: TextAlign.left,
                           overflow: TextOverflow.ellipsis,
                           text: TextSpan(children: [
-                            WidgetSpan(
+                            const WidgetSpan(
                                 child: Icon(Icons.star,
                                     color: Colors.orange, size: 19)),
                             TextSpan(

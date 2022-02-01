@@ -6,6 +6,8 @@ import 'package:jisan/Mathgame/math.dart';
 import 'package:jisan/convetor&currency/Convetor.dart';
 import 'package:jisan/convetor&currency/button.dart';
 import 'package:jisan/convetor&currency/main.dart';
+import 'package:jisan/popmore/about%20me.dart';
+import 'package:jisan/popmore/listview.dart';
 import 'package:jisan/screens/product.dart';
 import 'package:jisan/screens/product_item.dart';
 import 'package:jisan/screens/product_page.dart';
@@ -161,7 +163,7 @@ class _LandingScreenState extends State<LandingScreen> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => currency(),
+                                        builder: (context) => const listview(),
                                       ),
                                     );
                                   },
@@ -530,7 +532,9 @@ class _PopupMenuContentState extends State<PopupMenuContent>
                           children: [
                             //Repeat now
                             GestureDetector(
-                              onTap: () => _closePopup("About US"),
+                              onTap: (){
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>const about()));
+                              },
                               child: Row(
                                 children: [
                                   Container(
