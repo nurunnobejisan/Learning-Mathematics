@@ -5,8 +5,6 @@ import 'package:jisan/Mathgame/constants/app_constant.dart';
 import 'package:jisan/Mathgame/constants/app_strings.dart';
 import 'package:jisan/Mathgame/widgets/main_list.dart';
 
-
-
 class Math extends StatefulWidget {
   const Math({Key? key}) : super(key: key);
 
@@ -19,25 +17,15 @@ class _Math extends State<Math> {
   Widget build(BuildContext context) {
     return MaterialApp(
       builder: EasyLoading.init(),
-      debugShowCheckedModeBanner: false,
-      title: 'Material App',
       home: Builder(
         builder: (context) {
           return Scaffold(
             backgroundColor: Sabitler.mainbackgroundColor,
             appBar: AppBar(
-              actions: [
-                IconButton(
-                    onPressed: () {
-                      _buildPopupDialog(context);
-                    },
-                    icon: Icon(Icons.info))
-              ],
               backgroundColor: Sabitler.mainAppBarBackgroundColor,
               title: Sabitler.appBarTitle,
               titleTextStyle: GoogleFonts.openSans(
-                textStyle: const TextStyle(fontWeight: FontWeight.bold),
-              ),
+                  textStyle: const TextStyle(fontWeight: FontWeight.bold)),
             ),
             body: Center(
               child: SizedBox(
@@ -50,26 +38,4 @@ class _Math extends State<Math> {
       ),
     );
   }
-}
-
-Widget _buildPopupDialog(BuildContext context) {
-  return AlertDialog(
-    title: const Text('Game İnfo'),
-    content: Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: const [
-        Text(Strings.info),
-      ],
-    ),
-    actions: <Widget>[
-      FlatButton(
-        onPressed: () {
-          Navigator.of(context).pop();
-        },
-        textColor: Theme.of(context).primaryColor,
-        child: const Text('Close'),
-      ),
-    ],
-  );
 }

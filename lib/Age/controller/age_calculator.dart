@@ -3,18 +3,18 @@ import 'package:jisan/Age/model/model.dart';
 import 'package:intl/intl.dart';
 
 class AgeCalculator {
-  /// _daysInMonth cost contains days per months; daysInMonth method to be used instead.
+
   static const List<int> _daysInMonth = [31,28,31,30,31,30,31,31,30,31,30,31];
 
-  /// isLeapYear method
+
   static bool isLeapYear(int year) =>(year % 4 == 0) && ((year % 100 != 0) || (year % 400 == 0));
 
-  /// daysInMonth method
+
   static int daysInMonth(int year, int month) =>(month == DateTime.february && isLeapYear(year)) ? 29 : _daysInMonth[month - 1];
 
-  /// dateDifference method
+
   static DateDuration dateDifference({required DateTime fromDate, required DateTime toDate}) {
-    // Check if toDate to be included in the calculation
+
     DateTime endDate = toDate;
 
     int years = endDate.year - fromDate.year;
@@ -61,7 +61,7 @@ class AgeCalculator {
     return DateDuration(days: days, months: months, years: years);
   }
 
-  /// add method
+
   static DateTime add({required DateTime date, required DateDuration duration}) {
     int years = date.year + duration.years;
     years += ((date.month + duration.months) ~/ DateTime.monthsPerYear);

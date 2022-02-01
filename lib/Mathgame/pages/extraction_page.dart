@@ -17,7 +17,7 @@ class _CikartmaOyunuState extends State<CikartmaOyunu> {
         appBar: AppBar(
           elevation: 12,
           backgroundColor: Sabitler.minusGameColor,
-          title: const Text("Extraction Game"),
+          title: const Text("ভাগ  কুইজ"),
         ),
         body: GameArea(
           color: Sabitler.minusGameColor,

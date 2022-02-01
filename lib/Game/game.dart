@@ -25,7 +25,7 @@ class game extends StatelessWidget {
               SizedBox(
                 height: 15.0.h,
               ),
-              Text("Amz",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 30.0.sp),)
+              Text("গণিত খেলা",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 30.0.sp),)
             ],
           ),
         ),

@@ -8,7 +8,6 @@ import 'package:jisan/Age/widget/custom_large_button.dart';
 import 'package:jisan/Age/widget/custom_top_paint.dart';
 import 'package:jisan/Age/widget/date_picker_field.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({ Key? key }) : super(key: key);
@@ -23,82 +22,74 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
     return Scaffold(
-      body: Container(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Container(
-              child: Stack(
-                children: [
-                  CustomPaint(
-                    size: Size(width, (350 * 0.31473214285714285).toDouble()), 
-                    painter: CustomTopPaint(),
-                  ),
-                  Positioned(
-                    top: 30,
-                    child: AppName()
-                  )
-                ],
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Stack(
+            children: [
+              CustomPaint(
+                size: Size(width, (350 * 0.31473214285714285).toDouble()),
+                painter: CustomTopPaint(),
+              ),
+              const Positioned(
+                top: 30,
+                child: AppName()
+              )
+            ],
+          ),
+          const Spacer(),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Text(
+              'আপনার বয়স ঠিক কত এবং আপনার পরবর্তী জন্মদিন পর্যন্ত কত দিন আছে তা আবিষ্কার করুন।',
+              style: TextStyle(
+                fontSize: 18,
+                height: 1.5,
+                fontWeight: FontWeight.w400,
+                fontFamily: 'roboto',
+                color: textColor ,
               ),
             ),
-            Spacer(),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Text(
-                'আপনার বয়স ঠিক কত এবং আপনার পরবর্তী জন্মদিন পর্যন্ত কত দিন আছে তা আবিষ্কার করুন।',
-                style: TextStyle(
-                  fontSize: 18, 
-                  height: 1.5,
-                  fontWeight: FontWeight.w400, 
-                  fontFamily: 'roboto', 
-                  color: textColor ,
+          ),
+          const Spacer(),
+          Image.asset("assets/images/age calcuter.png",width: 120,
+              height: 120,
+              ),
+
+          const Spacer(),
+          DatePickerField(
+            level: 'জন্ম তারিখ নির্বাচন করুন',
+            onTap: ()=> _selectDate(context, selectedBithDate, "BirthDate" ),
+            hintText: getFormatedDate(selectedBithDate),
+          ),
+          const SizedBox(height: 10,),
+          DatePickerField(
+            level: 'আজকের তারিখ\ নির্বাচন করুন',
+            onTap: ()=> _selectDate(context, selectedCurrentDate, "CurrentDate"),
+            hintText: getFormatedDate(selectedCurrentDate),
+          ),
+          Stack(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 80),
+                child: CustomPaint(
+                  size: Size(width, (399 * 0.31473214285714285).toDouble()),
+                  painter: CustomBottomPaint(),
                 ),
               ),
-            ),
-            Spacer(),
-            Container(
-              child: Image.asset("assets/images/age calcuter.png",width: 120,
-                  height: 120,
-                  ),
-            ),
-
-            Spacer(),
-            DatePickerField(
-              level: 'জন্ম তারিখ নির্বাচন করুন',
-              onTap: ()=> _selectDate(context, selectedBithDate, "BirthDate" ),
-              hintText: "${getFormatedDate(selectedBithDate)}",
-            ),
-            SizedBox(height: 10,),
-            DatePickerField(
-              level: 'আজকের তারিখ\ নির্বাচন করুন',
-              onTap: ()=> _selectDate(context, selectedCurrentDate, "CurrentDate"),
-              hintText: "${getFormatedDate(selectedCurrentDate)}",
-            ),
-            Container(
-              child: Stack(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 80),
-                    child: CustomPaint(
-                      size: Size(width, (399 * 0.31473214285714285).toDouble()), 
-                      painter: CustomBottomPaint(),
-                    ),
-                  ),
-                  Positioned(
-                    top: 40,
-                    child: CustomLargeButton(
-                      buttonLevel: "গণনা",
-                      onPressed: (){
-                        Route route = MaterialPageRoute(builder: (context)=>ResultPage());
-                        Navigator.push(context, route);
-                      },
-                    ),
-                  ),
-                ],
+              Positioned(
+                top: 40,
+                child: CustomLargeButton(
+                  buttonLevel: "গণনা",
+                  onPressed: (){
+                    Route route = MaterialPageRoute(builder: (context)=>const ResultPage());
+                    Navigator.push(context, route);
+                  },
+                ),
               ),
-            )
-          ],
-        ),
+            ],
+          )
+        ],
       ),
     );
   }
@@ -112,10 +103,11 @@ class _HomePageState extends State<HomePage> {
         firstDate: DateTime(1900),
         lastDate: DateTime(2101),
       );
-      if (pickedBirthDate != null && pickedBirthDate != selectedBithDate)
-      setState(() {
+      if (pickedBirthDate != null && pickedBirthDate != selectedBithDate) {
+        setState(() {
         selectedBithDate = pickedBirthDate;
       });
+      }
     } 
     if(from == "CurrentDate"){
       final DateTime? pickedCurrentDate = await showDatePicker(
@@ -125,10 +117,11 @@ class _HomePageState extends State<HomePage> {
         lastDate: DateTime(2101),
       );
 
-      if (pickedCurrentDate != null && pickedCurrentDate != selectedCurrentDate)
-      setState(() {
+      if (pickedCurrentDate != null && pickedCurrentDate != selectedCurrentDate) {
+        setState(() {
         selectedCurrentDate = pickedCurrentDate;
       });
+      }
     }
 
   }

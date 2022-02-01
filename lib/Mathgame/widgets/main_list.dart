@@ -30,7 +30,7 @@ class MainList extends StatelessWidget {
               shape: Sabitler.plusGameShape,
               color: Sabitler.plusGameColor,
               child: Center(
-                  child: Sabitler.createListTile(0xff232323, "Addition", "+")),
+                  child: Sabitler.createListTile(0xff232323, "যোগ", "+")),
             ),
           ),
         ),
@@ -47,7 +47,7 @@ class MainList extends StatelessWidget {
               shape: Sabitler.minusGameShape,
               color: Sabitler.minusGameColor,
               child: Center(
-                child: Sabitler.createListTile(0xff232323, "Extraction", "-"),
+                child: Sabitler.createListTile(0xff232323, "বিয়োগ", "-"),
               ),
             ),
           ),
@@ -63,7 +63,7 @@ class MainList extends StatelessWidget {
               shape: Sabitler.divideGameShape,
               color: Sabitler.divideGameColor,
               child: Center(
-                  child: Sabitler.createListTile(0xff232323, "Division", "/")),
+                  child: Sabitler.createListTile(0xff232323, "ভাগ", "/")),
             ),
           ),
         ),
@@ -80,7 +80,7 @@ class MainList extends StatelessWidget {
               shape: Sabitler.multiplyGameShape,
               color: Sabitler.multiplyGameColor,
               child: Center(
-                  child: Sabitler.createListTile(0xff232323, "Multiply", "*")),
+                  child: Sabitler.createListTile(0xff232323, "গুন", "*")),
             ),
           ),
         ),

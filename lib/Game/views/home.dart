@@ -48,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
               margin: const EdgeInsets.only(bottom: 10.0,left: 20.0),
               child:Row(
                 children: <Widget>[
-                  Text("Guses",style: TextStyle(color: const Color(0xFF4F2FF8),fontSize: 40.0.sp,fontWeight: FontWeight.bold,letterSpacing: 2.sp)),
+                  Text("অনুমান",style: TextStyle(color: const Color(0xFF4F2FF8),fontSize: 40.0.sp,fontWeight: FontWeight.bold,letterSpacing: 2.sp)),
                    SizedBox(
                     width: 5.0.w,
                   ),
@@ -57,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Container(
               margin:EdgeInsets.only(right:160.0.w,bottom: 60.0.h),
-              child:Text("Number",style: TextStyle(color: Colors.white,fontSize: 40.0.sp,fontWeight: FontWeight.bold)),
+              child:Text("সংখ্যা",style: TextStyle(color: Colors.white,fontSize: 40.0.sp,fontWeight: FontWeight.bold)),
             ),
             SizedBox(
               height: 35.0.h,
@@ -75,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     0xFF3E30FF),shape:RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15.0.r),
                 ) ),
-                child: Text("START TO PLAY",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,letterSpacing: 2.sp,fontSize: 15.0.sp)),
+                child: Text("খেলা শুরু করুন",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,letterSpacing: 2.sp,fontSize: 15.0.sp)),
               ),
             )
           ],

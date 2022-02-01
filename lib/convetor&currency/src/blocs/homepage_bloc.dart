@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jisan/convetor&currency/src/states/homepage_states.dart';
 import 'package:jisan/convetor&currency/src/events/homepage_events.dart';
@@ -10,8 +11,9 @@ class HomePageBloc extends Bloc<HomePageEvent, HomePageStates> {
 
   @override
   Stream<HomePageStates> mapEventToState(HomePageEvent event) async* {
-    if (event is GetAvailableCurrenciesEvent)
+    if (event is GetAvailableCurrenciesEvent) {
       yield* _getAvailableCurrenciesBloc(event);
+    }
     if (event is GetExchangeRatesEvent) yield* _getExchangeRatesEvent(event);
     if (event is SaveConversionsEvent) yield* _saveConversionBloc(event);
   }
@@ -23,7 +25,9 @@ class HomePageBloc extends Bloc<HomePageEvent, HomePageStates> {
       yield GetAvailableCurrenciesSuccess(
           await repository.getAvailableCurrenciesRepo());
     } catch (e) {
-      print(e.toString());
+      if (kDebugMode) {
+        print(e.toString());
+      }
       yield LoadingFailure();
     }
   }
@@ -34,7 +38,9 @@ class HomePageBloc extends Bloc<HomePageEvent, HomePageStates> {
     try {
       yield GetExchangeRateSuccess(await repository.getExchangeRateRepo(event));
     } catch (e) {
-      print(e.toString());
+      if (kDebugMode) {
+        print(e.toString());
+      }
       yield LoadingFailure();
     }
   }
@@ -45,7 +51,9 @@ class HomePageBloc extends Bloc<HomePageEvent, HomePageStates> {
     try {
       yield SaveConversionSuccess(await repository.saveConversionRepo(event));
     } catch (e) {
-      print(e.toString());
+      if (kDebugMode) {
+        print(e.toString());
+      }
       yield LoadingFailure();
     }
   }

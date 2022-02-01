@@ -109,7 +109,7 @@ class _GameAreaState extends State<GameArea> {
                     style: const TextStyle(color: Colors.white, fontSize: 24),
                     textAlign: TextAlign.center,
                     decoration: InputDecoration(
-                      hintText: "Enter Answer",
+                      hintText: "উত্তর লিখুন",
                       filled: true,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(50),
@@ -133,7 +133,7 @@ class _GameAreaState extends State<GameArea> {
                 Padding(
                   padding: const EdgeInsets.only(bottom: 16, top: 32),
                   child: Text(
-                    "Highest Score: $_highScore",
+                    "সর্বোচ্চ স্কোর: $_highScore",
                     textAlign: TextAlign.center,
                     style: TextStyle(color: widget.color, fontSize: 20),
                   ),
@@ -155,7 +155,7 @@ class _GameAreaState extends State<GameArea> {
                             });
                           },
                           child: Text(
-                            "Easy Game",
+                            "সহজ খেলা",
                             style: Sabitler.difficultyTextStyle,
                           )),
                       const Divider(),
@@ -174,7 +174,7 @@ class _GameAreaState extends State<GameArea> {
                             });
                           },
                           child: Text(
-                            "Medium Game",
+                            "মাঝারি খেলা",
                             style: Sabitler.difficultyTextStyle,
                           )),
                       const Divider(),
@@ -193,7 +193,7 @@ class _GameAreaState extends State<GameArea> {
                             });
                           },
                           child: Text(
-                            "Hard Game",
+                            "কঠিন খেলা",
                             style: Sabitler.difficultyTextStyle,
                           )),
                       const Divider(),
@@ -212,7 +212,7 @@ class _GameAreaState extends State<GameArea> {
                             });
                           },
                           child: Text(
-                            "Extreme Game",
+                            "চরম খেলা",
                             style: Sabitler.difficultyTextStyle,
                           )),
                     ],

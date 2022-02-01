@@ -28,7 +28,7 @@ class Sabitler {
     ),
   );
 
-  static const minusGameColor = Color(0xff6854cf);
+  static const minusGameColor = Color(0xff050505);
   static const minusGameShape = RoundedRectangleBorder(
     side: BorderSide(
       color: Color(0x0ff7dbbb),

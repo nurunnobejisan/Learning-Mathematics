@@ -8,8 +8,10 @@ import 'package:jisan/convetor&currency/src/data/models/previous_conversions_mod
 import 'package:jisan/convetor&currency/src/states/previous_conversions_screen_states.dart';
 
 class PreviousConversions extends StatefulWidget {
+  const PreviousConversions({Key? key}) : super(key: key);
+
   @override
-  PreviousConversionsState createState() => new PreviousConversionsState();
+  PreviousConversionsState createState() => PreviousConversionsState();
 }
 
 class PreviousConversionsState extends State<PreviousConversions> {
@@ -17,7 +19,7 @@ class PreviousConversionsState extends State<PreviousConversions> {
   bool isLoadingProgress = false;
   List<PreviousConversionModel>? previousConversionList = [];
   static PreviousConversionStates? initialState = LoadingState();
-  PreviousConversionsBloc? _previousConversionsBloc =
+  final PreviousConversionsBloc? _previousConversionsBloc =
       PreviousConversionsBloc(initialState!);
 
   @override
@@ -31,12 +33,12 @@ class PreviousConversionsState extends State<PreviousConversions> {
     screenSize = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(
-          color: Colors.black, //change your color here
+        iconTheme: const IconThemeData(
+          color: Colors.black,
         ),
         backgroundColor: Colors.transparent,
         elevation: 0.0,
-        title: Text(
+        title: const Text(
           "My Conversions",
           style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),
         ),
@@ -61,10 +63,10 @@ class PreviousConversionsState extends State<PreviousConversions> {
         ),
         inAsyncCall: isLoadingProgress,
         progressIndicator: Center(
-          child: Container(
+          child: SizedBox(
             width: MediaQuery.of(context).size.width * 0.04,
             height: MediaQuery.of(context).size.height * 0.02,
-            child: CircularProgressIndicator(),
+            child: const CircularProgressIndicator(),
           ),
         ),
       ),
@@ -72,11 +74,9 @@ class PreviousConversionsState extends State<PreviousConversions> {
   }
 
   Widget buildScreen() {
-    return previousConversionList == null || previousConversionList!.length == 0
-        ? Center(
-            child: Container(
-              child: Text("No conversions yet"),
-            ),
+    return previousConversionList == null || previousConversionList!.isEmpty
+        ? const Center(
+            child: Text("No conversions yet"),
           )
         : Container(
             width: MediaQuery.of(context).size.width,
@@ -111,7 +111,7 @@ class PreviousConversionsState extends State<PreviousConversions> {
           SizedBox(
             height: screenSize.height * 0.03,
           ),
-          Divider(
+          const Divider(
             thickness: 1,
           ),
         ],

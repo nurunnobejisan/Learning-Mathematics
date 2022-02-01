@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jisan/convetor&currency/src/events/previous_conversions_events.dart';
 import 'package:jisan/convetor&currency/src/repositories/previous_conversions_repository.dart';
@@ -14,8 +15,9 @@ class PreviousConversionsBloc
   @override
   Stream<PreviousConversionStates> mapEventToState(
       PreviousConversionsEvent event) async* {
-    if (event is GetAllPreviousConversions)
+    if (event is GetAllPreviousConversions) {
       yield* _getAllPreviousConversionsBloc(event);
+    }
   }
 
   Stream<PreviousConversionStates> _getAllPreviousConversionsBloc(
@@ -25,7 +27,9 @@ class PreviousConversionsBloc
       yield GetAllPreviousConversionsSuccess(
           await repository.getPreviousConversionsRepo());
     } catch (e) {
-      print(e.toString());
+      if (kDebugMode) {
+        print(e.toString());
+      }
       yield LoadingFailure();
     }
   }

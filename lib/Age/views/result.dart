@@ -27,188 +27,170 @@ class _ResultPageState extends State<ResultPage> {
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
     return Scaffold(
-      body: Container(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Container(
-              child: Stack(
-                children: [
-                  CustomPaint(
-                    size: Size(width, (350*0.31473214285714285).toDouble()), 
-                    painter: CustomTopPaint(),
-                  ),
-                  Positioned(
-                    top: 30,
-                    child: AppName(),
-                  )
-                ],
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Stack(
+            children: [
+              CustomPaint(
+                size: Size(width, (350*0.31473214285714285).toDouble()),
+                painter: CustomTopPaint(),
               ),
-            ),
-            Spacer(),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Column(
-                children: [
-                  CustomListTile(
-                    leading: "জন্মতারিখ",
-                    trailing: getFormatedDate(selectedBithDate),
-                  ),
-                  SizedBox(height: 20,),
-                  CustomListTile(
-                    leading: "আজকের",
-                    trailing: getFormatedDate(selectedCurrentDate),
-                  ),
-                ],
+              const Positioned(
+                top: 30,
+                child: AppName(),
               )
+            ],
+          ),
+          const Spacer(),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
+              children: [
+                CustomListTile(
+                  leading: "জন্মতারিখ",
+                  trailing: getFormatedDate(selectedBithDate),
+                ),
+                const SizedBox(height: 20,),
+                CustomListTile(
+                  leading: "আজকের",
+                  trailing: getFormatedDate(selectedCurrentDate),
+                ),
+              ],
+            )
+          ),
+          const Spacer(),
+          Container(
+            margin: const EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.all(15),
+            height: 120,
+            decoration: BoxDecoration(
+              color: const Color(0xff90dce2),
+              borderRadius: BorderRadius.circular(10)
             ),
-            Spacer(),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 20),
-              padding: EdgeInsets.all(15),
-              height: 120,
-              decoration: BoxDecoration(
-                color: Color(0xff90dce2),
-                borderRadius: BorderRadius.circular(10)
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Expanded(
-                    child: Container(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text("বয়স"),
+                      Text.rich(
+                      TextSpan(
                         children: [
-                          Text("বয়স"),
-                          Text.rich(
-                          TextSpan(
-                            children: [
-                              TextSpan(text: AgeCalculator.age(selectedBithDate, today: selectedCurrentDate).years.toString(), style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28),),
-                              TextSpan(
-                                text: ' বছর',
-                                style: TextStyle(fontWeight: FontWeight.normal),
-                              ),
-                            ],
-                           ),
+                          TextSpan(text: AgeCalculator.age(selectedBithDate, today: selectedCurrentDate).years.toString(), style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 28),),
+                          const TextSpan(
+                            text: ' বছর',
+                            style: TextStyle(fontWeight: FontWeight.normal),
                           ),
-                          Text("${AgeCalculator.age(selectedBithDate, today: selectedCurrentDate).months.toString()} Months | ${AgeCalculator.age(selectedBithDate, today: selectedCurrentDate).days.toString()} Days"),
                         ],
+                       ),
                       ),
-                    ),
+                      Text("${AgeCalculator.age(selectedBithDate, today: selectedCurrentDate).months.toString()} Months | ${AgeCalculator.age(selectedBithDate, today: selectedCurrentDate).days.toString()} Days"),
+                    ],
                   ),
-                  CustomDivider(),
-                  Expanded(
-                   child: Container(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text("পরবর্তী জন্মদিন"),
-                          Text(AgeCalculator.findDayName().toString(), style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),),
-                          Text("${AgeCalculator.timeToNextBirthday(selectedBithDate, fromDate: selectedCurrentDate).months} Months | ${AgeCalculator.timeToNextBirthday(selectedBithDate, fromDate: selectedCurrentDate).days} Days"),
-                        ],
-                      ),
-                    ),
-                 )
-                ],
-              )
+                ),
+                const CustomDivider(),
+                Expanded(
+                 child: Column(
+                   crossAxisAlignment: CrossAxisAlignment.start,
+                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                   children: [
+                     const Text("পরবর্তী জন্মদিন"),
+                     Text(AgeCalculator.findDayName().toString(), style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 24),),
+                     Text("${AgeCalculator.timeToNextBirthday(selectedBithDate, fromDate: selectedCurrentDate).months} Months | ${AgeCalculator.timeToNextBirthday(selectedBithDate, fromDate: selectedCurrentDate).days} Days"),
+                   ],
+                 ),
+               )
+              ],
+            )
+          ),
+          const Spacer(),
+          Container(
+            margin: const EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.all(15),
+            decoration: BoxDecoration(
+              color: const Color(0xff90dce2),
+              borderRadius: BorderRadius.circular(10)
             ),
-            Spacer(),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 20),
-              padding: EdgeInsets.all(15),
-              decoration: BoxDecoration(
-                color: Color(0xff90dce2),
-                borderRadius: BorderRadius.circular(10)
-              ),
-              child: Column(
-                children: [
-                  Text("বয়স মধ্যে", style: TextStyle(color: textColor, fontSize: 18, fontWeight: FontWeight.w700),),
-                  SizedBox(height: 20,),
-                  Container(
-                    child: Row(
+            child: Column(
+              children: [
+                Text("বয়স মধ্যে", style: TextStyle(color: textColor, fontSize: 18, fontWeight: FontWeight.w700),),
+                const SizedBox(height: 20,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Container(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              SummaryCardBuilder(
-                                title: "বছর",
-                                subTitle: AgeCalculator.age(selectedBithDate, today: selectedCurrentDate).years.toString(),
-                              ),
-                              SizedBox(height: 20,),
-                              SummaryCardBuilder(
-                                title: "সপ্তাহ",
-                                subTitle: (AgeCalculator.age(selectedBithDate, today: selectedCurrentDate).years * 52).toString(),
-                                fontSize: 14,
-                              ),
-                            ],
-                          ),
+                        SummaryCardBuilder(
+                          title: "বছর",
+                          subTitle: AgeCalculator.age(selectedBithDate, today: selectedCurrentDate).years.toString(),
                         ),
-                        Container(
-                          child: Column(
-                            children: [
-                              SummaryCardBuilder(
-                                title: "মাস",
-                                subTitle: (AgeCalculator.age(selectedBithDate, today: selectedCurrentDate).years * 12).toString(),
-                              ),
-                              SizedBox(height: 20,),
-                              SummaryCardBuilder(
-                                title: "ঘন্টার",
-                                subTitle: AgeCalculator.hoursBetween(selectedBithDate, selectedCurrentDate).toString(),
-                                fontSize: 14,
-                              ),
-                            ],
-                          ),
+                        const SizedBox(height: 20,),
+                        SummaryCardBuilder(
+                          title: "সপ্তাহ",
+                          subTitle: (AgeCalculator.age(selectedBithDate, today: selectedCurrentDate).years * 52).toString(),
+                          fontSize: 14,
                         ),
-                         Container(
-                          child: Column(
-                            children: [
-                              SummaryCardBuilder(
-                                title: "দিন",
-                                subTitle: AgeCalculator.daysBetween(selectedBithDate, selectedCurrentDate).toString(),
-                              ),
-                              SizedBox(height: 20,),
-                              SummaryCardBuilder(
-                                title: "মিনিট",
-                                subTitle: AgeCalculator.minutesBetween(selectedBithDate, selectedCurrentDate).toString(),
-                                fontSize: 14,
-                              ),
-                            ],
-                          ),
-                        )
                       ],
                     ),
-                  )
-                ],
-              ),
+                    Column(
+                      children: [
+                        SummaryCardBuilder(
+                          title: "মাস",
+                          subTitle: (AgeCalculator.age(selectedBithDate, today: selectedCurrentDate).years * 12).toString(),
+                        ),
+                        const SizedBox(height: 20,),
+                        SummaryCardBuilder(
+                          title: "ঘন্টার",
+                          subTitle: AgeCalculator.hoursBetween(selectedBithDate, selectedCurrentDate).toString(),
+                          fontSize: 14,
+                        ),
+                      ],
+                    ),
+                     Column(
+                       children: [
+                         SummaryCardBuilder(
+                           title: "দিন",
+                           subTitle: AgeCalculator.daysBetween(selectedBithDate, selectedCurrentDate).toString(),
+                         ),
+                         const SizedBox(height: 20,),
+                         SummaryCardBuilder(
+                           title: "মিনিট",
+                           subTitle: AgeCalculator.minutesBetween(selectedBithDate, selectedCurrentDate).toString(),
+                           fontSize: 14,
+                         ),
+                       ],
+                     )
+                  ],
+                )
+              ],
             ),
-            Container(
-              child: Stack(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 80),
-                    child: CustomPaint(
-                      size: Size(width, (399*0.31473214285714285).toDouble()), 
-                      painter: CustomBottomPaint(),
-                    ),
-                  ),
-                  Positioned(
-                    top: 40,
-                    child: CustomLargeButton(
-                      onPressed: (){
-                        Navigator.pop(context);
-                      },
-                      buttonLevel: "পুনরায় গণনা করুন",
-                    ),
-                  ),
-                ],
+          ),
+          Stack(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 80),
+                child: CustomPaint(
+                  size: Size(width, (399*0.31473214285714285).toDouble()),
+                  painter: CustomBottomPaint(),
+                ),
               ),
-            )
-          ],
-        ),
+              Positioned(
+                top: 40,
+                child: CustomLargeButton(
+                  onPressed: (){
+                    Navigator.pop(context);
+                  },
+                  buttonLevel: "পুনরায় গণনা করুন",
+                ),
+              ),
+            ],
+          )
+        ],
       ),
     );
   }

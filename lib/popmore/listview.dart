@@ -147,21 +147,6 @@ class _ListViewPageState extends State<ListViewPage> {
           "List view",
           style: TextStyle(color: Colors.indigoAccent),
         ),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(
-              Icons.arrow_back_ios,
-              color: Colors.indigoAccent,
-            ),
-            onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (BuildContext context) => LandingScreen(),
-                  ));
-            },
-          )
-        ],
         elevation: 0,
         backgroundColor: Colors.white,
       ),

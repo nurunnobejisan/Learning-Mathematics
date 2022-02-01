@@ -18,7 +18,7 @@ class _BolmeOyunuState extends State<BolmeOyunu> {
         elevation: 12,
         backgroundColor: Sabitler.divideGameColor,
         title: const Text(
-          "Division Game",
+          "বিয়োগ কুইজ",
         ),
       ),
       body: GameArea(

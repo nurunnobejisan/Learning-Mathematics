@@ -29,12 +29,12 @@ class PreviousConversionModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['date'] = this.date;
-    data['sourceCurrency'] = this.sourceCurrency;
-    data['targetCurrency'] = this.targetCurrency;
-    data['sourceValue'] = this.sourceValue;
-    data['targetValue'] = this.targetValue;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['date'] = date;
+    data['sourceCurrency'] = sourceCurrency;
+    data['targetCurrency'] = targetCurrency;
+    data['sourceValue'] = sourceValue;
+    data['targetValue'] = targetValue;
     return data;
   }
 

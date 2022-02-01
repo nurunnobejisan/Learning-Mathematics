@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'dart:async';
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart';
 import 'package:http/http.dart' as http;
 import 'package:jisan/convetor&currency/src/utils/apis.dart';
@@ -14,7 +15,9 @@ class ApiClient {
   };
 
   Future<Response> getRequest(String endPoint) async {
-    print("endpoint of server call : $endPoint");
+    if (kDebugMode) {
+      print("endpoint of server call : $endPoint");
+    }
     try {
       response = await httpClient.get(
         Uri.https("$API_BASE_URL", endPoint),

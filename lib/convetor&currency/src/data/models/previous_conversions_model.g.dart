@@ -1,11 +1,4 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
-
 part of 'previous_conversions_model.dart';
-
-// **************************************************************************
-// TypeAdapterGenerator
-// **************************************************************************
-
 class PreviousConversionModelAdapter
     extends TypeAdapter<PreviousConversionModel> {
   @override

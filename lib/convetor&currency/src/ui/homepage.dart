@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jisan/convetor&currency/src/blocs/homepage_bloc.dart';
@@ -12,8 +11,10 @@ import 'package:jisan/convetor&currency/src/data/models/currency_model.dart';
 import 'package:jisan/convetor&currency/src/data/models/previous_conversions_model.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
+
   @override
-  HomePageState createState() => new HomePageState();
+  HomePageState createState() => HomePageState();
 }
 
 class HomePageState extends State<HomePage> {
@@ -24,8 +25,8 @@ class HomePageState extends State<HomePage> {
   bool isLoadingProgress = false;
   List<CurrencyModel>? listOfCurrency = [];
   static HomePageStates? initialState = LoadingState();
-  HomePageBloc? _homePageBloc = HomePageBloc(initialState!);
-  TextEditingController _textEditingController = TextEditingController();
+  final HomePageBloc? _homePageBloc = HomePageBloc(initialState!);
+  final TextEditingController _textEditingController = TextEditingController();
 
   @override
   void initState() {
@@ -74,10 +75,8 @@ class HomePageState extends State<HomePage> {
             child: buildScreen(),
           ),
           inAsyncCall: isLoadingProgress,
-          progressIndicator: Center(
-            child: Container(
-              child: CircularProgressIndicator(),
-            ),
+          progressIndicator: const Center(
+            child: CircularProgressIndicator(),
           ),
         ),
       ),
@@ -105,7 +104,7 @@ class HomePageState extends State<HomePage> {
           SizedBox(
             height: screenSize.height * 0.05,
           ),
-          Divider(
+          const Divider(
             thickness: 1,
           ),
           SizedBox(
@@ -136,20 +135,20 @@ class HomePageState extends State<HomePage> {
 
   //amount box
   Widget amountBox() {
-    return Container(
+    return SizedBox(
       height: screenSize.height * 0.07,
       width: screenSize.width,
       child: TextField(
         controller: _textEditingController,
         textAlign: TextAlign.left,
-        decoration: new InputDecoration(
+        decoration: InputDecoration(
           hintText: 'Amount',
           contentPadding: EdgeInsets.only(left: screenSize.width*0.06,right: screenSize.width*0.06,top: screenSize.height*0.02,bottom: screenSize.height*0.02),
-          border: new OutlineInputBorder(
-            borderRadius: const BorderRadius.all(
-              const Radius.circular(0.0),
+          border: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(0.0),
             ),
-            borderSide: new BorderSide(
+            borderSide: BorderSide(
               color: Colors.black,
               width: 1.0,
             ),
@@ -216,9 +215,9 @@ class HomePageState extends State<HomePage> {
       height: screenSize.height * 0.07,
       width: screenSize.width,
       alignment: Alignment.center,
-      decoration: new BoxDecoration(
+      decoration: BoxDecoration(
         shape: BoxShape.rectangle,
-        border: new Border.all(
+        border: Border.all(
           color: Colors.black,
           width: 1.0,
         ),
@@ -226,7 +225,7 @@ class HomePageState extends State<HomePage> {
       child: DropdownButton<CurrencyModel>(
         iconEnabledColor: Colors.transparent,
         underline: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             border: Border(
               bottom: BorderSide(
                 color: Colors.transparent,
@@ -235,8 +234,8 @@ class HomePageState extends State<HomePage> {
           ),
         ),
         hint: dropdownName == "source"
-            ? Text("Source Currency")
-            : Text("Target Currency"),
+            ? const Text("Source Currency")
+            : const Text("Target Currency"),
         value: dropdownName == "source" ? _sourceCurrency : _targetCurrency,
         items: listOfCurrency!.map((CurrencyModel value) {
           return DropdownMenuItem<CurrencyModel>(

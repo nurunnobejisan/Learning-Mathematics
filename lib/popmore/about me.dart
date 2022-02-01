@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:jisan/screens/landing_screen.dart';
 
-class about extends StatelessWidget {
+class about extends StatefulWidget {
   const about({Key? key}) : super(key: key);
 
+  @override
+  State<about> createState() => _aboutState();
+}
+
+class _aboutState extends State<about> {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
@@ -77,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (BuildContext context) => LandingScreen(),
+                          builder: (BuildContext context) => const LandingScreen(),
                         ));
                   },),
                 const Text(

@@ -17,7 +17,7 @@ class _CarpmaOyunuState extends State<CarpmaOyunu> {
       appBar: AppBar(
         elevation: 12,
         backgroundColor: Sabitler.multiplyGameColor,
-        title: const Text("Multiply Game"),
+        title: const Text("গুন  কুইজ"),
       ),
       body: GameArea(
         score: _highScore,

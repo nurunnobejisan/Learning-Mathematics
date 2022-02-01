@@ -1,11 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 
 part of 'currency_model.dart';
-
-// **************************************************************************
-// TypeAdapterGenerator
-// **************************************************************************
-
 class CurrencyModelAdapter extends TypeAdapter<CurrencyModel> {
   @override
   final int typeId = 1;

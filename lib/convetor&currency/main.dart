@@ -4,8 +4,6 @@ import 'package:jisan/convetor&currency/src/data/models/previous_conversions_mod
 import 'package:hive/hive.dart';
 import 'package:flutter/material.dart';
 import 'package:jisan/convetor&currency/src/ui/homepage.dart';
-import 'package:jisan/convetor&currency/src/data/models/currency_model.dart';
-import 'package:jisan/convetor&currency/src/data/models/previous_conversions_model.dart';
 import 'package:path_provider/path_provider.dart' as pathProvider;
 
 Future<void> main() async {
@@ -14,11 +12,16 @@ Future<void> main() async {
   Hive.init(directory.path);
   Hive.registerAdapter(PreviousConversionModelAdapter());
   Hive.registerAdapter(CurrencyModelAdapter());
-  runApp(currency());
 }
 
-class currency extends StatelessWidget {
+class currency extends StatefulWidget {
+  const currency({Key? key}) : super(key: key);
 
+  @override
+  State<currency> createState() => _currencyState();
+}
+
+class _currencyState extends State<currency> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -28,7 +31,7 @@ class currency extends StatelessWidget {
         primaryColor: Colors.green,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: HomePage(),
+      home: const HomePage(),
     );
   }
 }

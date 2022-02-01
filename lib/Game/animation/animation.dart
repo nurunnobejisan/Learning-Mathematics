@@ -20,9 +20,9 @@ class _AnimationImageState extends State<AnimationImage> with SingleTickerProvid
   duration: const Duration(seconds: 3),
 
   )..repeat(reverse: true);
-  late Animation<Offset> _animation = Tween(
+  late final Animation<Offset> _animation = Tween(
     begin: Offset.zero,
-    end: Offset(0,0.08),
+    end: const Offset(0,0.08),
   ).animate(_controller);
 
   @override

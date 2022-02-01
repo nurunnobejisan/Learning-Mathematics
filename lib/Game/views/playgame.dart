@@ -38,15 +38,15 @@ class _StarttogameState extends State<Starttogame> {
             SizedBox(
               height: 10.0.h,
             ),
-            Imagelevels(Imagefilename: "images/icons8-diamond-green.png",buttontext: "Level 1",levelstxt: "Easy",actiontext: "easy",),
+            Imagelevels(Imagefilename: "images/icons8-diamond-green.png",buttontext: "স্তর 1",levelstxt: "সহজ",actiontext: "সহজ",),
             SizedBox(
               height: 15.0.h,
             ),
-            Imagelevels(Imagefilename: "images/icons8-diamond-blue.png",buttontext: "Level 2",levelstxt: "Normal",actiontext: "normal",),
+            Imagelevels(Imagefilename: "images/icons8-diamond-blue.png",buttontext: "স্তর 2",levelstxt: "স্বাভাবিক",actiontext: "স্বাভাবিক",),
             SizedBox(
               height: 15.0.h,
             ),
-            Imagelevels(Imagefilename: "images/icons8-diamond-red.png",buttontext: "Level 3",levelstxt: "Hard",actiontext: "hard",),
+            Imagelevels(Imagefilename: "images/icons8-diamond-red.png",buttontext: "স্তর 3",levelstxt: "কঠিন",actiontext: "কঠিন",),
 
           ],
         ),
@@ -92,13 +92,13 @@ class Imagelevels extends StatelessWidget {
           child: TextButton(
             onPressed: (){
           Navigator.of(context).push(MaterialPageRoute (builder: (context){
-            if (actiontext == "easy"){
+            if (actiontext == "সহজ"){
               return  Esplay();
             }
-            else if (actiontext == "normal"){
+            else if (actiontext == "স্বাভাবিক"){
               return  Normalplay();
             }
-            else if (actiontext == "hard"){
+            else if (actiontext == "কঠিন"){
               return  Hardplay();
             }
             return Esplay();

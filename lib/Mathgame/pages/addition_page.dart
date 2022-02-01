@@ -19,7 +19,7 @@ class _ToplamaOyunuState extends State<ToplamaOyunu> {
         elevation: 12,
         backgroundColor: Sabitler.plusGameColor,
         title: const Text(
-          "Addition Game",
+          "যোগ কুইজ",
         ),
       ),
       body: GameArea(

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class Calculator extends StatefulWidget {
+  const Calculator({Key? key}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() {
     return _Calculator();
@@ -55,7 +57,7 @@ class _Calculator extends State<Calculator> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      backgroundColor: Color(0xFF010808),
+      backgroundColor: const Color(0xFF010808),
       body: Column(
         children: <Widget>[
           Expanded(
@@ -68,48 +70,48 @@ class _Calculator extends State<Calculator> {
                     Expanded(
                       flex: 1,
                       child: Container(
-                        margin:EdgeInsets.only(top: 85.0,left: 10.0),
-                        child:Text(text,style: TextStyle(color: Colors.white,fontSize: 50.0),) ,
+                        margin:const EdgeInsets.only(top: 85.0,left: 10.0),
+                        child:Text(text,style: const TextStyle(color: Colors.white,fontSize: 50.0),) ,
                       ),
                     ),
                     //  > all buttons >
                     Row(
                       children: <Widget>[
-                        buttons("c",Color(0xFF3BA8CF),97.0,97.0,40.0,0.0,0.0,0.0,35.0,),
-                        buttons("+/-",Color(0xFF08151A),97.0,97.0,40.0,0.0,0.0,0.0,30.0,),
-                        buttons("%",Color(0xFF08151A),97.0,97.0,40.0,0.0,0.0,0.0,35.0,),
-                        buttons("+",Color(0xFF7543E9),97.0,97.0,40.0,0.0,0.0,0.0,40.0,),
+                        buttons("c",const Color(0xFF3BA8CF),97.0,97.0,40.0,0.0,0.0,0.0,35.0,),
+                        buttons("+/-",const Color(0xFF08151A),97.0,97.0,40.0,0.0,0.0,0.0,30.0,),
+                        buttons("%",const Color(0xFF08151A),97.0,97.0,40.0,0.0,0.0,0.0,35.0,),
+                        buttons("+",const Color(0xFF7543E9),97.0,97.0,40.0,0.0,0.0,0.0,40.0,),
                       ],
                     ),
                     Row(
                       children: <Widget>[
-                        buttons("1",Color(0xFF3BA8CF),97.0,97.0,0.0,0.0,0.0,0.0,30.0,),
-                        buttons("2",Color(0xFF08151A),97.0,97.0,0.0,0.0,0.0,0.0,30.0,),
-                        buttons("3",Color(0xFF08151A),97.0,97.0,0.0,0.0,0.0,0.0,30.0,),
-                        buttons("-",Color(0xFF7543E9),97.0,97.0,0.0,0.0,0.0,0.0,40.0,),
+                        buttons("1",const Color(0xFF3BA8CF),97.0,97.0,0.0,0.0,0.0,0.0,30.0,),
+                        buttons("2",const Color(0xFF08151A),97.0,97.0,0.0,0.0,0.0,0.0,30.0,),
+                        buttons("3",const Color(0xFF08151A),97.0,97.0,0.0,0.0,0.0,0.0,30.0,),
+                        buttons("-",const Color(0xFF7543E9),97.0,97.0,0.0,0.0,0.0,0.0,40.0,),
                       ],
                     ),
                     Row(
                       children: <Widget>[
-                        buttons("4",Color(0xFF3BA8CF),97.0,97.0,0.0,0.0,0.0,0.0,30.0,),
-                        buttons("5",Color(0xFF08151A),97.0,97.0,0.0,0.0,0.0,0.0,30.0,),
-                        buttons("6",Color(0xFF08151A),97.0,97.0,0.0,0.0,0.0,0.0,30.0,),
-                        buttons("x",Color(0xFF7543E9),97.0,97.0,0.0,0.0,0.0,0.0,40.0,),
+                        buttons("4",const Color(0xFF3BA8CF),97.0,97.0,0.0,0.0,0.0,0.0,30.0,),
+                        buttons("5",const Color(0xFF08151A),97.0,97.0,0.0,0.0,0.0,0.0,30.0,),
+                        buttons("6",const Color(0xFF08151A),97.0,97.0,0.0,0.0,0.0,0.0,30.0,),
+                        buttons("x",const Color(0xFF7543E9),97.0,97.0,0.0,0.0,0.0,0.0,40.0,),
                       ],
                     ),
                     Row(
                       children: <Widget>[
-                        buttons("7",Color(0xFF3BA8CF),97.0,97.0,0.0,0.0,0.0,0.0,30.0,),
-                        buttons("8",Color(0xFF08151A),97.0,97.0,0.0,0.0,0.0,0.0,30.0,),
-                        buttons("9",Color(0xFF08151A),97.0,97.0,0.0,0.0,0.0,0.0,30.0,),
-                        buttons("/",Color(0xFF7543E9),97.0,97.0,0.0,0.0,0.0,0.0,40.0,),
+                        buttons("7",const Color(0xFF3BA8CF),97.0,97.0,0.0,0.0,0.0,0.0,30.0,),
+                        buttons("8",const Color(0xFF08151A),97.0,97.0,0.0,0.0,0.0,0.0,30.0,),
+                        buttons("9",const Color(0xFF08151A),97.0,97.0,0.0,0.0,0.0,0.0,30.0,),
+                        buttons("/",const Color(0xFF7543E9),97.0,97.0,0.0,0.0,0.0,0.0,40.0,),
                       ],
                     ),
                     Row(
                       children: <Widget>[
-                        buttons("0",Color(0xFF3BA8CF),97.0,97.0,0.0,0.0,0.0,0.0,30.0,),
-                        buttons(".",Color(0xFF08151A),97.0,97.0,0.0,0.0,0.0,0.0,30.0,),
-                        buttons("=",Color(0xFF7543E9),97.0,195.0,0.0,0.0,0.0,0.0,40.0,),
+                        buttons("0",const Color(0xFF3BA8CF),97.0,97.0,0.0,0.0,0.0,0.0,30.0,),
+                        buttons(".",const Color(0xFF08151A),97.0,97.0,0.0,0.0,0.0,0.0,30.0,),
+                        buttons("=",const Color(0xFF7543E9),97.0,195.0,0.0,0.0,0.0,0.0,40.0,),
                       ],
                     ),
                   ],
@@ -228,8 +230,9 @@ class _Calculator extends State<Calculator> {
 
     if(result.toString().contains('.')) {
       List<String> splitDecimal = result.toString().split('.');
-      if(!(int.parse(splitDecimal[1]) > 0))
+      if(!(int.parse(splitDecimal[1]) > 0)) {
         return result = splitDecimal[0].toString();
+      }
     }
     return result;
   }

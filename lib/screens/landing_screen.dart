@@ -51,7 +51,7 @@ class _LandingScreenState extends State<LandingScreen> {
                         ),
                         Image.asset("assets/images/background.png"),
                         Padding(
-                          padding: const EdgeInsets.all(10),
+                          padding: const EdgeInsets.all(8),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
@@ -73,7 +73,7 @@ class _LandingScreenState extends State<LandingScreen> {
                                   Expanded(
                                     flex: 8,
                                     child: Text(
-                                        "“Pure mathematics is in its way, the poetry of logical ideas.”\n- Albert Einstein.",
+                                        "“নীল নদের মতো গণিতের অধ্যয়নও সূক্ষ্মভাবে শুরু হয় তবে মহিমায় শেষ হয়।”\n-চার্লস কালেব কোলটন,",
                                         style: textTheme.headline5!
                                             .apply(color: Colors.white)),
                                   )
@@ -89,15 +89,15 @@ class _LandingScreenState extends State<LandingScreen> {
                                   hintStyle:
                                       const TextStyle(color: Colors.black),
                                   border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(13.0),
+                                      borderRadius: BorderRadius.circular(23.0),
                                       borderSide: BorderSide.none),
                                   prefixIcon: const Icon(
                                     Icons.search,
                                     color: Colors.black,
                                   ),
                                   suffixIcon: Container(
-                                    height: 5,
-                                    width: 5,
+                                    height: 4,
+                                    width: 3,
                                     decoration: const BoxDecoration(
                                         color: Colors.white24,
                                         borderRadius: BorderRadius.only(
@@ -138,14 +138,14 @@ class _LandingScreenState extends State<LandingScreen> {
                               children: [
                                 InkWell(
                                   child: Text(
-                                    "   Math Articles",
+                                    "   গণিত নিবন্ধসমূহ",
                                     style: textTheme.headline5,
                                   ),
                                   onTap: () {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => const Math(),
+                                        builder: (context) => const listview(),
                                       ),
                                     );
                                   },
@@ -155,7 +155,7 @@ class _LandingScreenState extends State<LandingScreen> {
                                 ),
                                 InkWell(
                                   child: Text(
-                                    "View More >> ",
+                                    "আরও দেখুন>> ",
                                     style: textTheme.subtitle2!
                                         .apply(color: COLOR_ORANGE),
                                   ),
@@ -210,7 +210,7 @@ class _LandingScreenState extends State<LandingScreen> {
                                   children: [
                                     GestureDetector(
                                       child: ListTile(
-                                          'Math Game',
+                                          'গণিত খেলা',
                                           Image.asset(
                                             'assets/images/math game.png',
                                             height: 80,
@@ -228,7 +228,7 @@ class _LandingScreenState extends State<LandingScreen> {
                                     ),
                                     GestureDetector(
                                       child: ListTile(
-                                          'Math Quiz',
+                                          'গণিত কুইজ',
                                           Image.asset(
                                             'assets/images/math quiz.png',
                                             height: 82,
@@ -246,7 +246,7 @@ class _LandingScreenState extends State<LandingScreen> {
                                     ),
                                     GestureDetector(
                                       child: ListTile(
-                                          'Calculter',
+                                          'ক্যালকুলেটর',
                                           Image.asset(
                                             'assets/images/calculter.png',
                                             height: 82,
@@ -264,7 +264,7 @@ class _LandingScreenState extends State<LandingScreen> {
                                     ),
                                     GestureDetector(
                                       child: ListTile(
-                                          'Age Cal',
+                                          'বয়স ক্যালকুলেটর',
                                           Image.asset(
                                             'assets/images/age calcuter.png',
                                             height: 82,
@@ -283,7 +283,7 @@ class _LandingScreenState extends State<LandingScreen> {
                                     ),
                                     GestureDetector(
                                       child: ListTile(
-                                          'BMI Cal',
+                                          'BMI ক্যালকুলেটর',
                                           Image.asset(
                                             'assets/images/BMI Cal.png',
                                             height: 82,
@@ -302,7 +302,7 @@ class _LandingScreenState extends State<LandingScreen> {
                                     ),
                                     GestureDetector(
                                       child: ListTile(
-                                          'Temperature',
+                                          'তাপমাত্রা ক্যালকুলেটর',
                                           Image.asset(
                                             'assets/images/temperature.png',
                                             height: 82,
@@ -320,7 +320,7 @@ class _LandingScreenState extends State<LandingScreen> {
                                     ),
                                     GestureDetector(
                                       child: ListTile(
-                                          'Currency',
+                                          'মুদ্রা ক্যালকুলেটর',
                                           Image.asset(
                                             'assets/images/currency.png',
                                             height: 82,
@@ -355,7 +355,7 @@ class _LandingScreenState extends State<LandingScreen> {
     return Padding(
         padding: const EdgeInsets.only(right: 10, left: 5),
         child: Column(children: [
-          const SizedBox(height: 19),
+          const SizedBox(height: 20),
           Container(
               padding: const EdgeInsets.only(right: 10, left: 15),
               decoration: BoxDecoration(
@@ -370,7 +370,7 @@ class _LandingScreenState extends State<LandingScreen> {
                       textAlign: TextAlign.center,
                       style: const TextStyle(
                           fontFamily: 'nunito',
-                          fontSize: 12.0,
+                          fontSize: 11.0,
                           color: Color(0xFF3C2960)))))
         ]));
   }
@@ -532,8 +532,11 @@ class _PopupMenuContentState extends State<PopupMenuContent>
                           children: [
                             //Repeat now
                             GestureDetector(
-                              onTap: (){
-                                Navigator.push(context, MaterialPageRoute(builder: (context)=>const about()));
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => const about()));
                               },
                               child: Row(
                                 children: [
@@ -552,7 +555,7 @@ class _PopupMenuContentState extends State<PopupMenuContent>
                                     width: 12,
                                   ),
                                   Text(
-                                    "About US",
+                                    "আমাদের সম্পর্কে",
                                     style: TextStyle(
                                         color: Colors.black.withOpacity(.7),
                                         fontSize: 18,
@@ -567,7 +570,7 @@ class _PopupMenuContentState extends State<PopupMenuContent>
                             ),
 
                             GestureDetector(
-                              onTap: () => _closePopup("Privacy Policy"),
+                              onTap: () => _closePopup("গোপনীয়তা নীতি"),
                               child: Row(
                                 children: [
                                   Container(
@@ -585,7 +588,7 @@ class _PopupMenuContentState extends State<PopupMenuContent>
                                     width: 12,
                                   ),
                                   Text(
-                                    "Privacy Policy",
+                                    "গোপনীয়তা নীতি",
                                     style: TextStyle(
                                         color: Colors.black.withOpacity(.7),
                                         fontSize: 18,
@@ -600,7 +603,7 @@ class _PopupMenuContentState extends State<PopupMenuContent>
                             ),
 
                             GestureDetector(
-                              onTap: () => _closePopup("ShareNow"),
+                              onTap: () => _closePopup("এখন শেয়ার করুন"),
                               child: Row(
                                 children: [
                                   Container(
@@ -618,7 +621,7 @@ class _PopupMenuContentState extends State<PopupMenuContent>
                                     width: 12,
                                   ),
                                   Text(
-                                    "Share Now",
+                                    "এখন শেয়ার করুন",
                                     style: TextStyle(
                                         color: Colors.black.withOpacity(.7),
                                         fontSize: 18,
