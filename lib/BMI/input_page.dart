@@ -30,7 +30,7 @@ class _InputPageState extends State<InputPage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('BMI CALCULATOR',),
+        title: const Text('BMI ক্যালকুলেটর',),
         backgroundColor: Colors.indigoAccent,
       ),
       body: Column(
@@ -51,7 +51,7 @@ class _InputPageState extends State<InputPage> {
                           ? KactiveCardcolor
                           : KinactiveCardColor,
                       cardchild: const childContent(
-                          icon: FontAwesomeIcons.mars, label: 'Male'),
+                          icon: FontAwesomeIcons.mars, label: 'পুরুষ'),
                     ),
                   ),
                 ),
@@ -67,7 +67,7 @@ class _InputPageState extends State<InputPage> {
                           ? KactiveCardcolor
                           : KinactiveCardColor,
                       cardchild: const childContent(
-                          icon: FontAwesomeIcons.venus, label: 'FEMALE'),
+                          icon: FontAwesomeIcons.venus, label: 'নারী'),
                     ),
                   ),
                 ),
@@ -81,7 +81,7 @@ class _InputPageState extends State<InputPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const Text('HEIGHT', style: KlabelTextStyle),
+                  const Text('উচ্চতা', style: KlabelTextStyle),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.baseline,
@@ -133,7 +133,7 @@ class _InputPageState extends State<InputPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         const Text(
-                          'WEIGHT ',
+                          'ওজন  ',
                           style: KlabelTextStyle,
                         ),
                         Text(
@@ -173,7 +173,7 @@ class _InputPageState extends State<InputPage> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         const Text(
-                          'AGE',
+                          'বয়স',
                           style: KlabelTextStyle,
                         ),
                         Text(
@@ -224,7 +224,7 @@ class _InputPageState extends State<InputPage> {
                 ),
               );
             },
-            ButtonName: 'CALCULATE BMI',
+            ButtonName: 'BMI হিসাব করুন',
           ),
         ],
       ),

@@ -16,7 +16,7 @@ const KlabelTextStyle = TextStyle(
 
 const numberTextStyle = TextStyle(fontSize: 50, fontWeight: FontWeight.w900);
 
-const KTitleTextStyle = TextStyle(fontSize: 50, fontWeight: FontWeight.bold);
+const KTitleTextStyle = TextStyle(fontSize: 40, fontWeight: FontWeight.bold);
 
 const KResultTextStyle = TextStyle(
   color: Colors.greenAccent,

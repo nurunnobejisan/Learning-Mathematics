@@ -17,7 +17,7 @@ class resultPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('BMI CALCULATOR',),
+        title: Text('BMI ক্যালকুলেটর',),
         backgroundColor: Colors.indigoAccent,
       ),
       body: Column(
@@ -28,7 +28,7 @@ class resultPage extends StatelessWidget {
             child: Container(
               padding: EdgeInsets.all(15),
               child: const Text(
-                'Your result',
+                'আপনার ফলাফল',
                 textAlign: TextAlign.center,
                 style: KTitleTextStyle,
               ),
@@ -60,7 +60,7 @@ class resultPage extends StatelessWidget {
           ),
           pink_button(
             onpress: () => Navigator.pop(context),
-            ButtonName: 'RE-CALCULATE ',
+            ButtonName: 'পুনরায় গণনা করুন ',
           ),
         ],
       ),

@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:jisan/Age/views/home.dart';
 import 'package:jisan/BMI/input_page.dart';
 import 'package:jisan/Game/game.dart';
@@ -14,6 +17,7 @@ import 'package:jisan/screens/product_page.dart';
 import 'package:jisan/utils/constants.dart';
 import 'package:jisan/utils/widget_functions.dart';
 import 'package:flutter/cupertino.dart';
+
 
 class LandingScreen extends StatefulWidget {
   const LandingScreen({Key? key}) : super(key: key);
@@ -57,7 +61,7 @@ class _LandingScreenState extends State<LandingScreen> {
                             children: [
                               Row(
                                 children: [
-                                  Container(
+                                  SizedBox(
                                       width: 90,
                                       child: Padding(
                                         padding: const EdgeInsets.all(8.0),
@@ -86,8 +90,8 @@ class _LandingScreenState extends State<LandingScreen> {
                                   border: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(90.0),
                                       borderSide: BorderSide.none),
-                                  prefixIcon: InkWell(
-                                    child: const Icon(
+                                  prefixIcon: const InkWell(
+                                    child: Icon(
                                       Icons.search,
                                       color: Colors.black,
                                     ),
@@ -350,7 +354,7 @@ class _LandingScreenState extends State<LandingScreen> {
 
   ListTile(String name, Image iconName, Color bgColor) {
     return Padding(
-        padding: const EdgeInsets.only(right: 10, left: 5),
+        padding: const EdgeInsets.only(right: 10,  left: 5),
         child: Column(children: [
           const SizedBox(height: 20),
           Container(
@@ -632,25 +636,31 @@ class _PopupMenuContentState extends State<PopupMenuContent>
                             ),
 
                             GestureDetector(
-                              onTap: () => _closePopup("Exit"),
+                              onTap: () {
+                                if (Platform.isAndroid) {
+                                  SystemNavigator.pop();
+                                } else {
+                                  exit(0);
+                                }
+                              },
                               child: Row(
                                 children: [
                                   Container(
                                     padding: const EdgeInsets.all(6),
                                     decoration: BoxDecoration(
-                                      color: const Color(0xFFA9D2AC),
+                                      color: Colors.greenAccent,
                                       borderRadius: BorderRadius.circular(24),
                                     ),
                                     child: const Icon(
                                       Icons.exit_to_app_outlined,
-                                      color: Color(0xFF030303),
+                                      color: Colors.white,
                                     ),
                                   ),
                                   const SizedBox(
                                     width: 12,
                                   ),
                                   Text(
-                                    "Exit",
+                                    "প্রস্থান",
                                     style: TextStyle(
                                         color: Colors.black.withOpacity(.7),
                                         fontSize: 18,
@@ -665,7 +675,7 @@ class _PopupMenuContentState extends State<PopupMenuContent>
                             ),
 
                             GestureDetector(
-                              onTap: () => _closePopup("getHelp"),
+                              onTap: () => _closePopup("সহায়তা পান"),
                               child: Container(
                                 width: double.maxFinite,
                                 height: 150,
@@ -721,3 +731,4 @@ class _PopupMenuContentState extends State<PopupMenuContent>
     });
   }
 }
+

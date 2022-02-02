@@ -144,7 +144,7 @@ class _ListViewPageState extends State<ListViewPage> {
       appBar: AppBar(
         // App Bar
         title: const Text(
-          "List view",
+          "তালিকা দর্শন",
           style: TextStyle(color: Colors.indigoAccent),
         ),
         elevation: 0,

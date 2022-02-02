@@ -61,7 +61,6 @@ class _ProductPageState extends State<ProductPage> {
                           ],
                         ),
                       ),
-
                       Container(
                         color: Colors.grey.shade50,
                         child: Stack(
@@ -72,7 +71,6 @@ class _ProductPageState extends State<ProductPage> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-
                                   Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
@@ -85,7 +83,6 @@ class _ProductPageState extends State<ProductPage> {
                                             "${widget.productData['name']}",
                                             style: textTheme.headline5,
                                           ),
-
                                           RichText(
                                               overflow: TextOverflow.ellipsis,
                                               text: TextSpan(children: [
@@ -97,8 +94,7 @@ class _ProductPageState extends State<ProductPage> {
                                                 TextSpan(
                                                     text:
                                                         "${widget.productData['rest']}",
-                                                    style: textTheme
-                                                        .subtitle2!
+                                                    style: textTheme.subtitle2!
                                                         .apply(
                                                             color: COLOR_GREY))
                                               ])),
@@ -112,12 +108,10 @@ class _ProductPageState extends State<ProductPage> {
                                                 text:
                                                     "${widget.productData['article number']}",
                                                 style: textTheme.headline5!
-                                                    .apply(
-                                                        color: COLOR_ORANGE))
+                                                    .apply(color: COLOR_ORANGE))
                                           ])),
                                     ],
                                   ),
-
                                   const Divider(),
                                   Container(
                                     margin: const EdgeInsets.symmetric(
@@ -130,10 +124,10 @@ class _ProductPageState extends State<ProductPage> {
                                             overflow: TextOverflow.ellipsis,
                                             text: TextSpan(children: [
                                               const WidgetSpan(
-                                                  child: Icon(
-                                                      Icons.star,
-                                                      color: Colors.indigoAccent,
-                                                      size: 15)),
+                                                  child: Icon(Icons.star,
+                                                      color:
+                                                          Colors.indigoAccent,
+                                                      size: 20)),
                                               TextSpan(
                                                   text:
                                                       "${widget.productData['rating']}",
@@ -141,22 +135,21 @@ class _ProductPageState extends State<ProductPage> {
                                                       .apply(
                                                           fontWeightDelta: 4))
                                             ])),
-
                                         RichText(
                                             overflow: TextOverflow.ellipsis,
-                                            text: TextSpan(children: [
-                                              const WidgetSpan(
-                                                  child: Icon(
-                                                      Icons
-                                                          .next_plan_outlined,
-                                                      color:
-                                                          Colors.indigoAccent,
-                                                      size: 15)),
-                                              TextSpan(
-                                                  text: "Next",
-                                                  style: textTheme.bodyText2!
-                                                      .apply(
-                                                          fontWeightDelta: 4))
+                                            text: const TextSpan(children: [
+                                              WidgetSpan(
+                                                  child: InkWell(
+                                                    child: Icon(
+                                                Icons.emoji_emotions_rounded,
+                                                color: Colors.indigoAccent,
+                                                size: 20,
+
+                                              ),
+                                                  )
+
+
+                                              ),
                                             ])),
                                       ],
                                     ),
@@ -164,22 +157,20 @@ class _ProductPageState extends State<ProductPage> {
                                   const Divider(),
                                   RichText(
                                       text: TextSpan(children: [
-                                        TextSpan(
-                                          text:
-                                          "${widget.productData['article2']}",
-                                          style: textTheme.headline6,
-                                        )
-                                      ])),
+                                    TextSpan(
+                                      text: "${widget.productData['article2']}",
+                                      style: textTheme.headline6,
+                                    )
+                                  ])),
                                   addVerticalSpace(10),
                                   RichText(
                                       text: TextSpan(children: [
-                                        TextSpan(
-                                          text:
-                                              "${widget.productData['article']}",
-                                          style: textTheme.subtitle2!
-                                              .apply(heightDelta: 2.0),
-                                        )
-                                      ])),
+                                    TextSpan(
+                                      text: "${widget.productData['article']}",
+                                      style: textTheme.subtitle2!
+                                          .apply(heightDelta: 2.0),
+                                    )
+                                  ])),
                                   addVerticalSpace(100),
                                 ],
                               ),
@@ -189,7 +180,8 @@ class _ProductPageState extends State<ProductPage> {
                               right: 20,
                               child: InkWell(
                                 onTap: () {
-                                  Fluttertoast.showToast(msg: "Share Done");
+                                  Fluttertoast.showToast(
+                                      msg: "শেয়ার করা হয়েছে");
                                 },
                                 child: Container(
                                   width: 70,
@@ -199,8 +191,7 @@ class _ProductPageState extends State<ProductPage> {
                                       color: Colors.red,
                                       boxShadow: [
                                         BoxShadow(
-                                            color:
-                                                Colors.red.withOpacity(0.2),
+                                            color: Colors.red.withOpacity(0.2),
                                             blurRadius: 10.0,
                                             spreadRadius: 5.0)
                                       ]),
@@ -233,7 +224,7 @@ class _ProductPageState extends State<ProductPage> {
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20.0),
                         child: SlideAction(
-                          text: "        share with friends",
+                          text: "        বন্ধুদের সাথে শেয়ার করুন",
                           key: _buttonKey,
                           sliderButtonIcon: const Icon(
                             Icons.share_rounded,

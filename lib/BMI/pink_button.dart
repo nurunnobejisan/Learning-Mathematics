@@ -17,7 +17,7 @@ class pink_button extends StatelessWidget {
         child: Text(
           ButtonName.toString(),
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 19.0, fontWeight: FontWeight.w800),
+          style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.w800),
         ),
         color: Kbottomcontainercolor,
         margin: const EdgeInsets.only(top: 10),
