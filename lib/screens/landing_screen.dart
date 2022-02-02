@@ -58,14 +58,9 @@ class _LandingScreenState extends State<LandingScreen> {
                               Row(
                                 children: [
                                   Container(
-                                      width: 70,
-                                      decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(50.0),
-                                        color: Colors.white,
-                                      ),
+                                      width: 90,
                                       child: Padding(
-                                        padding: const EdgeInsets.all(0.0),
+                                        padding: const EdgeInsets.all(8.0),
                                         child: Image.asset(
                                             "assets/images/avatar.png"),
                                       )),
@@ -89,7 +84,7 @@ class _LandingScreenState extends State<LandingScreen> {
                                   hintStyle:
                                       const TextStyle(color: Colors.black),
                                   border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(23.0),
+                                      borderRadius: BorderRadius.circular(90.0),
                                       borderSide: BorderSide.none),
                                   prefixIcon: const Icon(
                                     Icons.search,
@@ -97,7 +92,7 @@ class _LandingScreenState extends State<LandingScreen> {
                                   ),
                                   suffixIcon: Container(
                                     height: 4,
-                                    width: 3,
+                                    width: 1,
                                     decoration: const BoxDecoration(
                                         color: Colors.white24,
                                         borderRadius: BorderRadius.only(
@@ -117,7 +112,7 @@ class _LandingScreenState extends State<LandingScreen> {
                                   filled: true,
                                 ),
                               ),
-                              addVerticalSpace(20),
+                              addVerticalSpace(5),
                             ],
                           ),
                         )
@@ -257,7 +252,7 @@ class _LandingScreenState extends State<LandingScreen> {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                            builder: (context) => Calculator(),
+                                            builder: (context) => const Calculator(),
                                           ),
                                         );
                                       },
@@ -331,7 +326,7 @@ class _LandingScreenState extends State<LandingScreen> {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                            builder: (context) => currency(),
+                                            builder: (context) => const currency(),
                                           ),
                                         );
                                       },

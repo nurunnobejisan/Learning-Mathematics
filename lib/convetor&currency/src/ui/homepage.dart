@@ -142,7 +142,7 @@ class HomePageState extends State<HomePage> {
         controller: _textEditingController,
         textAlign: TextAlign.left,
         decoration: InputDecoration(
-          hintText: 'Amount',
+          hintText: 'পরিমান',
           contentPadding: EdgeInsets.only(left: screenSize.width*0.06,right: screenSize.width*0.06,top: screenSize.height*0.02,bottom: screenSize.height*0.02),
           border: const OutlineInputBorder(
             borderRadius: BorderRadius.all(
@@ -164,7 +164,7 @@ class HomePageState extends State<HomePage> {
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all(Colors.grey[400]),
         ),
-        child: Text("view previous conversions",
+        child: Text("পূর্ববর্তী রূপান্তরগুলি দেখুন",
             style: TextStyle(
                 fontSize: screenSize.height * 0.017, color: Colors.black)),
         onPressed: () => {pageNavigate()});
@@ -234,8 +234,8 @@ class HomePageState extends State<HomePage> {
           ),
         ),
         hint: dropdownName == "source"
-            ? const Text("Source Currency")
-            : const Text("Target Currency"),
+            ? const Text("উৎস মুদ্রা")
+            : const Text("লক্ষ্য মুদ্রা"),
         value: dropdownName == "source" ? _sourceCurrency : _targetCurrency,
         items: listOfCurrency!.map((CurrencyModel value) {
           return DropdownMenuItem<CurrencyModel>(
@@ -249,9 +249,9 @@ class HomePageState extends State<HomePage> {
               _sourceCurrency = newValue;
             } else {
               if (_textEditingController.text.isEmpty) {
-                showToast("Please type amount first");
+                showToast("অনুগ্রহ করে প্রথমে পরিমাণ টাইপ করুন");
               } else if (_sourceCurrency == null) {
-                showToast("Please Select source currency first");
+                showToast("অনুগ্রহ করে প্রথমে উৎস মুদ্রা নির্বাচন করুন");
               } else {
                 _targetCurrency = newValue;
                 _homePageBloc!.add(GetExchangeRatesEvent(

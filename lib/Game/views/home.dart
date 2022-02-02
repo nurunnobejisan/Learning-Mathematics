@@ -57,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Container(
               margin:EdgeInsets.only(right:160.0.w,bottom: 60.0.h),
-              child:Text("সংখ্যা",style: TextStyle(color: Colors.white,fontSize: 40.0.sp,fontWeight: FontWeight.bold)),
+              child:Text("সংখ্যা",style: TextStyle(color: Colors.white,fontSize: 30.0.sp,fontWeight: FontWeight.bold)),
             ),
             SizedBox(
               height: 35.0.h,

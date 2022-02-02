@@ -33,7 +33,7 @@ class _convector extends State<convector> {
       home: Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
-          title: const Text("Temperature Converter"),
+          title: const Text("তাপমাত্রা রূপান্তরকারী"),
         ),
         body: Column(
           children: <Widget>[
@@ -61,7 +61,7 @@ class _convector extends State<convector> {
                                 margin: const EdgeInsets.only(top: 200.0),
                                 padding: const EdgeInsets.all(8.0),
                                 alignment: Alignment.center,
-                                child: const Text("Temperature in Kelvins",
+                                child: const Text("কেলভিন্সের তাপমাত্রা",
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                         fontSize: 20, color: Colors.black54)),
@@ -89,7 +89,7 @@ class _convector extends State<convector> {
                                 margin: const EdgeInsets.only(top: 200.0),
                                 padding: const EdgeInsets.all(8.0),
                                 alignment: Alignment.center,
-                                child: const Text("Temperature in Reamur",
+                                child: const Text("Reamur তাপমাত্রা",
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                         fontSize: 20, color: Colors.black54)),
@@ -116,7 +116,7 @@ class _convector extends State<convector> {
                     padding: const EdgeInsets.all(8.0),
                     child: RaisedButton(
                       onPressed: () => hitung(double.parse(myController.text)),
-                      child: const Text('Convert now!',
+                      child: const Text('এখন রূপান্তর করুন!',
                           style: TextStyle(fontSize: 20)),
                       color: Colors.blue,
                       textColor: Colors.white,
@@ -145,7 +145,7 @@ class Input extends StatelessWidget {
     return TextField(
       controller: myController,
       decoration:
-      const InputDecoration(labelText: 'Insert temperature in centigrade',hintStyle: TextStyle(
+      const InputDecoration(labelText: 'সেন্টিগ্রেডে তাপমাত্রা সন্নিবেশ করান',hintStyle: TextStyle(
         decoration:
         TextDecoration.underline,
         color: Color(0xff0446dd),
