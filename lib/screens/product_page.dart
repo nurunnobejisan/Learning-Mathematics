@@ -142,7 +142,7 @@ class _ProductPageState extends State<ProductPage> {
                                                   child: InkWell(
                                                     child: Icon(
                                                 Icons.emoji_emotions_rounded,
-                                                color: Colors.indigoAccent,
+                                                color: Colors.pink,
                                                 size: 20,
 
                                               ),
