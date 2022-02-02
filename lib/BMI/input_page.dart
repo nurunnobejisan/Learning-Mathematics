@@ -31,6 +31,7 @@ class _InputPageState extends State<InputPage> {
       appBar: AppBar(
         centerTitle: true,
         title: const Text('BMI CALCULATOR',),
+        backgroundColor: Colors.indigoAccent,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,

@@ -27,7 +27,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  // function returning social media contacts
+
   Widget buildInfo(String imageName, String nextText) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jisan/BMI/constants.dart';
-// ignore: camel_case_types
+
 class childContent extends StatelessWidget {
- // ignore: use_key_in_widget_constructors
  const childContent({required this.icon, required this.label});
   final IconData icon;
   final String label;

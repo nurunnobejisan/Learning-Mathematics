@@ -82,13 +82,15 @@ class _LandingScreenState extends State<LandingScreen> {
                                 decoration: InputDecoration(
                                   hintText: " গণিত বিষয়ে অনুসন্ধান করুন",
                                   hintStyle:
-                                      const TextStyle(color: Colors.black),
+                                  const TextStyle(color: Colors.black),
                                   border: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(90.0),
                                       borderSide: BorderSide.none),
-                                  prefixIcon: const Icon(
-                                    Icons.search,
-                                    color: Colors.black,
+                                  prefixIcon: InkWell(
+                                    child: const Icon(
+                                      Icons.search,
+                                      color: Colors.black,
+                                    ),
                                   ),
                                   suffixIcon: Container(
                                     height: 4,
@@ -98,15 +100,15 @@ class _LandingScreenState extends State<LandingScreen> {
                                         borderRadius: BorderRadius.only(
                                             topRight: Radius.circular(20.0),
                                             bottomRight:
-                                                Radius.circular(20.0))),
+                                            Radius.circular(20.0))),
                                     child: InkWell(
                                         child: MyPopupMenu(
-                                      child: Icon(
-                                        Icons.menu,
-                                        key: GlobalKey(),
-                                        color: Colors.black,
-                                      ),
-                                    )),
+                                          child: Icon(
+                                            Icons.menu,
+                                            key: GlobalKey(),
+                                            color: Colors.black,
+                                          ),
+                                        )),
                                   ),
                                   fillColor: Colors.grey.shade100,
                                   filled: true,
@@ -173,20 +175,20 @@ class _LandingScreenState extends State<LandingScreen> {
                               child: Row(
                                 children: PRODUCT_DATA
                                     .map((data) => InkWell(
-                                          onTap: () {
-                                            _focusNode.unfocus();
-                                            Navigator.of(context).push(
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        ProductPage(
-                                                            productData:
-                                                                data)));
-                                          },
-                                          child: ProductItem(
-                                            width: constraints.maxWidth * 0.50,
-                                            productData: data,
-                                          ),
-                                        ))
+                                  onTap: () {
+                                    _focusNode.unfocus();
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                ProductPage(
+                                                    productData:
+                                                    data)));
+                                  },
+                                  child: ProductItem(
+                                    width: constraints.maxWidth * 0.50,
+                                    productData: data,
+                                  ),
+                                ))
                                     .toList(),
                               ),
                             ),
@@ -271,7 +273,7 @@ class _LandingScreenState extends State<LandingScreen> {
                                           context,
                                           MaterialPageRoute(
                                             builder: (context) =>
-                                                const HomePage(),
+                                            const HomePage(),
                                           ),
                                         );
                                       },
@@ -290,7 +292,7 @@ class _LandingScreenState extends State<LandingScreen> {
                                           context,
                                           MaterialPageRoute(
                                             builder: (context) =>
-                                                const InputPage(),
+                                            const InputPage(),
                                           ),
                                         );
                                       },
@@ -495,8 +497,8 @@ class _PopupMenuContentState extends State<PopupMenuContent>
                 Positioned(
                   left: 0,
                   right:
-                      (MediaQuery.of(context).size.width - widget.position.dx) -
-                          widget.size.width,
+                  (MediaQuery.of(context).size.width - widget.position.dx) -
+                      widget.size.width,
                   top: widget.position.dy,
                   child: AnimatedBuilder(
                     animation: _animationController,

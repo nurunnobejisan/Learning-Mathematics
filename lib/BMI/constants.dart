@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 
 const Kbottomcontainerheight = 80.0;
-const KactiveCardcolor = Color(0xFF7F67B3);
-const KinactiveCardColor = Color(0xfe71c1c);
+const KactiveCardcolor = Colors.indigoAccent;
+const KinactiveCardColor = Color(0x0fe71c1c);
 const Kbottomcontainercolor = Colors.greenAccent;
 const KmaxsliderRange = 220;
 const KminsliderRange = 120;

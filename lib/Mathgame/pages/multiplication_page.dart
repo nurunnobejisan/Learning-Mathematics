@@ -16,7 +16,7 @@ class _CarpmaOyunuState extends State<CarpmaOyunu> {
     return Scaffold(
       appBar: AppBar(
         elevation: 12,
-        backgroundColor: Sabitler.multiplyGameColor,
+        backgroundColor: Colors.indigoAccent,
         title: const Text("গুন  কুইজ"),
       ),
       body: GameArea(

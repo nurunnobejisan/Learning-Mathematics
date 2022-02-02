@@ -14,21 +14,21 @@ class CalculatorBrain {
 
   String getResult() {
     if (_bmi >= 25) {
-      return 'Overweight';
+      return 'অতিরিক্ত ওজন';
     } else if (_bmi >= 18.5) {
-      return 'Normal';
+      return 'স্বাভাবিক';
     } else {
-      return 'Underweight';
+      return 'কম ওজনের';
     }
   }
 
   String getInterpretation() {
     if (_bmi >= 25) {
-      return 'You have a higher than normal body weight. Try to excercise more';
+      return 'আপনার শরীরের স্বাভাবিক ওজনের চেয়ে বেশি। আরও অনুশীলন করার চেষ্টা করুন';
     } else if (_bmi >= 18.5) {
-      return 'You have a normal body weight, Good Job';
+      return 'আপনি স্বাভাবিক শরীরের ওজন আছে, ভাল কাজ';
     } else {
-      return 'You have a lower than normal body weight, Try to eat more';
+      return 'আপনার শরীরের স্বাভাবিক ওজনের চেয়ে কম, আরও বেশি খাওয়ার চেষ্টা করুন';
     }
   }
 }

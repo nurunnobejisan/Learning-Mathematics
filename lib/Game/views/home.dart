@@ -60,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child:Text("সংখ্যা",style: TextStyle(color: Colors.white,fontSize: 30.0.sp,fontWeight: FontWeight.bold)),
             ),
             SizedBox(
-              height: 35.0.h,
+              height:30.0.h,
             ),
             SizedBox(
               width: 335.w,

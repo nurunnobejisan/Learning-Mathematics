@@ -16,7 +16,7 @@ class _BolmeOyunuState extends State<BolmeOyunu> {
     return Scaffold(
       appBar: AppBar(
         elevation: 12,
-        backgroundColor: Sabitler.divideGameColor,
+        backgroundColor: Colors.indigoAccent,
         title: const Text(
           "বিয়োগ কুইজ",
         ),

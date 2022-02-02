@@ -17,7 +17,7 @@ class _ToplamaOyunuState extends State<ToplamaOyunu> {
     return Scaffold(
       appBar: AppBar(
         elevation: 12,
-        backgroundColor: Sabitler.plusGameColor,
+        backgroundColor: Colors.indigoAccent,
         title: const Text(
           "যোগ কুইজ",
         ),

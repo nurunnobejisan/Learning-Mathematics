@@ -22,7 +22,7 @@ class _Math extends State<Math> {
           return Scaffold(
             backgroundColor: Sabitler.mainbackgroundColor,
             appBar: AppBar(
-              backgroundColor: Sabitler.mainAppBarBackgroundColor,
+              backgroundColor: Colors.indigoAccent,
               title: Sabitler.appBarTitle,
               titleTextStyle: GoogleFonts.openSans(
                   textStyle: const TextStyle(fontWeight: FontWeight.bold)),

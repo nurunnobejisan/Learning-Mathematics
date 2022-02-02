@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:jisan/Age/constant/color.dart';
 import 'package:jisan/fast%20screens/screens/onboarding/screen_one.dart';
 import 'package:jisan/utils/constants.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-      statusBarColor: primaryColor,
+      statusBarColor: Colors.indigoAccent,
+      systemNavigationBarColor: Colors.indigoAccent,
       statusBarIconBrightness: Brightness.light,
       statusBarBrightness: Brightness.dark
   ));
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
     return LayoutBuilder(builder: (context, constraints) {
       return MaterialApp(
         supportedLocales: const [
-          Locale('en', 'US'), // English
+          Locale('en', 'US'),
         ],
         debugShowCheckedModeBanner: false,
         title: 'Screen 2',

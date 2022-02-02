@@ -34,6 +34,7 @@ class _convector extends State<convector> {
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
           title: const Text("তাপমাত্রা রূপান্তরকারী"),
+          backgroundColor: Colors.indigoAccent,
         ),
         body: Column(
           children: <Widget>[
@@ -118,7 +119,7 @@ class _convector extends State<convector> {
                       onPressed: () => hitung(double.parse(myController.text)),
                       child: const Text('এখন রূপান্তর করুন!',
                           style: TextStyle(fontSize: 20)),
-                      color: Colors.blue,
+                      color: Colors.indigoAccent,
                       textColor: Colors.white,
                       elevation: 5,
                     ),
