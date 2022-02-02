@@ -25,7 +25,7 @@ class _Calculator extends State<Calculator> {
           appBarTheme: const AppBarTheme(
             color: Colors.indigoAccent,
           )),
-      home: const MyHomePage(title: 'Calculator'),
+      home: const MyHomePage(title: 'ক্যালকুলেটর'),
     );
   }
 }
