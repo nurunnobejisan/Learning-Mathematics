@@ -1,23 +1,26 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:jisan/Age/views/home.dart';
 import 'package:jisan/BMI/input_page.dart';
 import 'package:jisan/Game/game.dart';
 import 'package:jisan/Mathgame/math.dart';
 import 'package:jisan/convetor&currency/Convetor.dart';
 import 'package:jisan/convetor&currency/button.dart';
-import 'package:jisan/convetor&currency/main.dart';
+import 'package:jisan/convetor&currency/dashPages/currency.dart';
+import 'package:jisan/convetor&currency/dashPages/time.dart';
 import 'package:jisan/popmore/about%20me.dart';
 import 'package:jisan/popmore/listview.dart';
 import 'package:jisan/screens/product.dart';
 import 'package:jisan/screens/product_item.dart';
 import 'package:jisan/screens/product_page.dart';
-import 'package:jisan/utils/constants.dart';
 import 'package:jisan/utils/widget_functions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-
+import 'package:analog_clock/analog_clock.dart';
+import 'package:get/get.dart';
 
 class LandingScreen extends StatefulWidget {
   const LandingScreen({Key? key}) : super(key: key);
@@ -338,7 +341,25 @@ class _LandingScreenState extends State<LandingScreen> {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                            builder: (context) => const currency(),
+                                            builder: (context) =>const CurrencyConvert(),
+                                          ),
+                                        );
+                                      },
+                                    ),
+                                    GestureDetector(
+                                      child: ListTile(
+                                          'বিশ্ব ঘড়ি',
+                                          Image.asset(
+                                            'assets/images/clock.png',
+                                            height: 82,
+                                            width: 80,
+                                          ),
+                                          const Color(0xFF6FC5DA)),
+                                      onTap: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>const TimeConvert(),
                                           ),
                                         );
                                       },
@@ -736,3 +757,133 @@ class _PopupMenuContentState extends State<PopupMenuContent>
   }
 }
 
+class TimeCard extends StatelessWidget {
+  const TimeCard({
+    required this.locName,
+    required this.gmt,
+    required this.dateTime,
+    Key? key,
+  }) : super(key: key);
+
+  final String locName;
+  final String gmt;
+  final DateTime dateTime;
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      color: Colors.orange[200],
+      elevation: 3,
+      borderOnForeground: true,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        child: Row(
+          children: [
+            SizedBox(
+              width: 110,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    locName.toUpperCase(),
+                    overflow: TextOverflow.clip,
+                    maxLines: 2,
+                    style: GoogleFonts.ibmPlexSans(
+                        fontSize: 16, color: Colors.black54),
+                  ),
+                  Text(
+                    gmt.toUpperCase(),
+                    style: GoogleFonts.ibmPlexSans(
+                        fontSize: 12, color: Colors.black54),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(
+              width: 16,
+            ),
+            Expanded(
+              child: CircleAvatar(
+                backgroundColor: Colors.white,
+                minRadius: 22,
+                child: AnalogClock(
+                  isLive: true,
+                  datetime: dateTime,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class GridTile extends StatelessWidget {
+  const GridTile(
+      {Key? key,
+        required this.name,
+        required this.img,
+        required this.whenTapped})
+      : super(key: key);
+
+  final String name;
+  final String img;
+  final VoidCallback whenTapped;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: whenTapped,
+      child: Container(
+        height: 16,
+        width: 16,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: Center(
+                child: Image.asset(
+                  img,
+                  height: 40,
+                  width: 40,
+                ),
+              ),
+            ),
+            Padding(
+              padding:
+              const EdgeInsets.symmetric(horizontal: 4.0, vertical: 8.0),
+              child: Text(
+                name,
+                overflow: TextOverflow.clip,
+                maxLines: 2,
+                textAlign: TextAlign.center,
+                style: GoogleFonts.ibmPlexSans(
+                  letterSpacing: 0,
+                  fontSize: 12,
+                  color: Colors.black54,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+          ],
+        ),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(color: Colors.black12.withOpacity(0.05)),
+          boxShadow: const [
+            BoxShadow(
+              color: Colors.black12,
+              spreadRadius: 0.25,
+              blurRadius: 5,
+              offset: Offset(4, 4),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
