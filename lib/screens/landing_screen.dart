@@ -53,7 +53,6 @@ class _LandingScreenState extends State<LandingScreen> {
                       children: [
                         CarouselSlider(
                           items: [
-                            //1st Image of Slider
                             Container(
                               margin:
                               const EdgeInsets.only(top: 10, bottom: 10),
