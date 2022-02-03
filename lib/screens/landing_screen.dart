@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:jisan/Age/views/home.dart';
@@ -17,6 +16,7 @@ import 'package:jisan/screens/product_page.dart';
 import 'package:jisan/utils/constants.dart';
 import 'package:jisan/utils/widget_functions.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 
 class LandingScreen extends StatefulWidget {
@@ -40,6 +40,7 @@ class _LandingScreenState extends State<LandingScreen> {
     final TextTheme textTheme = Theme.of(context).textTheme;
     return SafeArea(
       child: Scaffold(
+
         resizeToAvoidBottomInset: false,
         body: LayoutBuilder(
           builder: (context, constraints) {
@@ -50,79 +51,89 @@ class _LandingScreenState extends State<LandingScreen> {
                     child: Stack(
                       fit: StackFit.expand,
                       children: [
-                        Container(
-                          color: COLOR_GREEN,
-                        ),
-                        Image.asset("assets/images/background.png"),
-                        Padding(
-                          padding: const EdgeInsets.all(8),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Row(
-                                children: [
-                                  SizedBox(
-                                      width: 90,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Image.asset(
-                                            "assets/images/avatar.png"),
-                                      )),
-                                  addHorizontalSpace(60),
-                                  Expanded(
-                                    flex: 8,
-                                    child: Text(
-                                        "“নীল নদের মতো গণিতের অধ্যয়নও সূক্ষ্মভাবে শুরু হয় তবে মহিমায় শেষ হয়।”\n-চার্লস কালেব কোলটন,",
-                                        style: textTheme.headline5!
-                                            .apply(color: Colors.white)),
-                                  )
-                                ],
-                              ),
-                              TextField(
-                                focusNode: _focusNode,
-                                cursorColor: Colors.blueAccent,
-                                cursorRadius: const Radius.circular(20.0),
-                                style: const TextStyle(color: Colors.black),
-                                decoration: InputDecoration(
-                                  hintText: " গণিত বিষয়ে অনুসন্ধান করুন",
-                                  hintStyle:
-                                  const TextStyle(color: Colors.black),
-                                  border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(90.0),
-                                      borderSide: BorderSide.none),
-                                  prefixIcon: const InkWell(
-                                    child: Icon(
-                                      Icons.search,
-                                      color: Colors.black,
-                                    ),
-                                  ),
-                                  suffixIcon: Container(
-                                    height: 4,
-                                    width: 1,
-                                    decoration: const BoxDecoration(
-                                        color: Colors.white24,
-                                        borderRadius: BorderRadius.only(
-                                            topRight: Radius.circular(20.0),
-                                            bottomRight:
-                                            Radius.circular(20.0))),
-                                    child: InkWell(
-                                        child: MyPopupMenu(
-                                          child: Icon(
-                                            Icons.menu,
-                                            key: GlobalKey(),
-                                            color: Colors.black,
-                                          ),
-                                        )),
-                                  ),
-                                  fillColor: Colors.grey.shade100,
-                                  filled: true,
-                                ),
-                              ),
-                              addVerticalSpace(5),
-                            ],
+                        CarouselSlider(
+                          items: [
+                            //1st Image of Slider
+                            Container(
+                              margin:
+                              const EdgeInsets.only(top: 10, bottom: 10),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: Colors.grey,
+                                  image: const DecorationImage(
+                                      image: AssetImage(
+                                          "assets/images/Qutes.png"),
+                                      fit: BoxFit.fill)),
+                            ),
+                            Container(
+                                margin:
+                                const EdgeInsets.only(top: 10, bottom: 10),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: Colors.grey,
+                                  image: const DecorationImage(
+                                      image: AssetImage(
+                                          "assets/images/Qutes (2).png"),
+                                      fit: BoxFit.fill),
+                                )),
+                            Container(
+                                margin:
+                                const EdgeInsets.only(top: 10, bottom: 10),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    color: Colors.grey,
+                                    image: const DecorationImage(
+                                        image: AssetImage(
+                                            "assets/images/Qutes (3).png"),
+                                        fit: BoxFit.fill))),
+                            Container(
+                                margin:
+                                const EdgeInsets.only(top: 10, bottom: 10),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    color: Colors.grey,
+                                    image: const DecorationImage(
+                                        image: AssetImage(
+                                            "assets/images/Qutes (4).png"),
+                                        fit: BoxFit.fill))),
+                            Container(
+                                margin:
+                                const EdgeInsets.only(top: 10, bottom: 10),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    color: Colors.grey,
+                                    image: const DecorationImage(
+                                        image: AssetImage(
+                                            "assets/images/Qutes (5).png"),
+                                        fit: BoxFit.fill))),
+                            Container(
+                                margin:
+                                const EdgeInsets.only(top: 10, bottom: 10),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    color: Colors.grey,
+                                    image: const DecorationImage(
+                                        image: AssetImage(
+                                            "assets/images/Qutes (6).png"),
+                                        fit: BoxFit.fill))),
+                          ],
+
+                          options: CarouselOptions(
+                            height: 250.0,
+                            enlargeCenterPage: true,
+                            autoPlay: true,
+                            aspectRatio: 9 / 16,
+                            autoPlayCurve: Curves.fastOutSlowIn,
+                            enableInfiniteScroll: true,
+                            autoPlayAnimationDuration:
+                            const Duration(milliseconds: 800),
+                            viewportFraction: 0.7,
+                            pageSnapping: true,
                           ),
-                        )
+                        ),
+
                       ],
+
                     )),
                 Container(
                   width: constraints.maxWidth,
@@ -139,7 +150,7 @@ class _LandingScreenState extends State<LandingScreen> {
                               children: [
                                 InkWell(
                                   child: Text(
-                                    "   গণিত নিবন্ধসমূহ",
+                                    " আরও দেখুন>> ",
                                     style: textTheme.headline5,
                                   ),
                                   onTap: () {
@@ -155,19 +166,14 @@ class _LandingScreenState extends State<LandingScreen> {
                                   child: Center(),
                                 ),
                                 InkWell(
-                                  child: Text(
-                                    "আরও দেখুন>> ",
-                                    style: textTheme.subtitle2!
-                                        .apply(color: COLOR_ORANGE),
-                                  ),
-                                  onTap: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => const listview(),
+                                    child: MyPopupMenu(
+                                      child: Icon(
+                                        Icons.menu,
+                                        key: GlobalKey(),
+                                        color: Colors.black,
+                                        size: 24,
                                       ),
-                                    );
-                                  },
+                                    ),
                                 ),
                                 addHorizontalSpace(10),
                               ],
@@ -196,6 +202,7 @@ class _LandingScreenState extends State<LandingScreen> {
                                     .toList(),
                               ),
                             ),
+
                           ],
                         ),
                         //sir problem on tap
@@ -518,11 +525,11 @@ class _PopupMenuContentState extends State<PopupMenuContent>
                       child: Container(
                         width: double.maxFinite,
                         padding: const EdgeInsets.symmetric(
-                            horizontal: 24, vertical: 24),
+                            horizontal: 20, vertical: 20),
                         margin: const EdgeInsets.only(left: 64),
                         decoration: BoxDecoration(
                             color: Colors.white,
-                            borderRadius: BorderRadius.circular(24),
+                            borderRadius: BorderRadius.circular(34),
                             boxShadow: [
                               BoxShadow(
                                 color: Colors.black.withOpacity(.1),
@@ -553,7 +560,7 @@ class _PopupMenuContentState extends State<PopupMenuContent>
                                     ),
                                   ),
                                   const SizedBox(
-                                    width: 12,
+                                    width: 10,
                                   ),
                                   Text(
                                     "আমাদের সম্পর্কে",
@@ -567,7 +574,7 @@ class _PopupMenuContentState extends State<PopupMenuContent>
                             ),
                             //Edit workout
                             const SizedBox(
-                              height: 16,
+                              height: 10,
                             ),
 
                             GestureDetector(
@@ -586,7 +593,7 @@ class _PopupMenuContentState extends State<PopupMenuContent>
                                     ),
                                   ),
                                   const SizedBox(
-                                    width: 12,
+                                    width: 10,
                                   ),
                                   Text(
                                     "গোপনীয়তা নীতি",
@@ -600,7 +607,7 @@ class _PopupMenuContentState extends State<PopupMenuContent>
                             ),
                             //Share workout
                             const SizedBox(
-                              height: 16,
+                              height: 10,
                             ),
 
                             GestureDetector(
@@ -619,7 +626,7 @@ class _PopupMenuContentState extends State<PopupMenuContent>
                                     ),
                                   ),
                                   const SizedBox(
-                                    width: 12,
+                                    width: 10,
                                   ),
                                   Text(
                                     "এখন শেয়ার করুন",
@@ -632,7 +639,7 @@ class _PopupMenuContentState extends State<PopupMenuContent>
                               ),
                             ),
                             const SizedBox(
-                              height: 16,
+                              height: 10,
                             ),
 
                             GestureDetector(
@@ -657,7 +664,7 @@ class _PopupMenuContentState extends State<PopupMenuContent>
                                     ),
                                   ),
                                   const SizedBox(
-                                    width: 12,
+                                    width: 10,
                                   ),
                                   Text(
                                     "প্রস্থান",
@@ -671,19 +678,19 @@ class _PopupMenuContentState extends State<PopupMenuContent>
                             ),
                             //Chat box
                             const SizedBox(
-                              height: 32,
+                              height: 10,
                             ),
 
                             GestureDetector(
                               onTap: () => _closePopup("সহায়তা পান"),
                               child: Container(
                                 width: double.maxFinite,
-                                height: 150,
+                                height: 70,
                                 padding: const EdgeInsets.symmetric(
-                                    horizontal: 16, vertical: 16),
+                                    horizontal: 10, vertical: 10),
                                 decoration: BoxDecoration(
                                   color: const Color(0xFFC2E3F6),
-                                  borderRadius: BorderRadius.circular(16),
+                                  borderRadius: BorderRadius.circular(32),
                                 ),
                                 child: Center(
                                   child: Column(
@@ -692,16 +699,14 @@ class _PopupMenuContentState extends State<PopupMenuContent>
                                       Icon(
                                         Icons.messenger_outline_rounded,
                                         color: Color(0xff1e93ad),
-                                        size: 44,
+                                        size: 26,
                                       ),
-                                      SizedBox(
-                                        height: 4,
-                                      ),
+
                                       Text(
-                                        "Get Help",
+                                        "সহায়তা পান",
                                         style: TextStyle(
                                             color: Color(0xff1e93ad),
-                                            fontSize: 18,
+                                            fontSize: 15,
                                             fontWeight: FontWeight.w600),
                                       ),
                                     ],
