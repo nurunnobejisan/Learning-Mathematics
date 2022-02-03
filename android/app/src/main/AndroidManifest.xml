@@ -31,4 +31,11 @@
             android:name="flutterEmbedding"
             android:value="2" />
     </application>
+    <!-- More stuff -->
+
+    <!-- Your permissions -->
+
+    <!-- Network API -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>
