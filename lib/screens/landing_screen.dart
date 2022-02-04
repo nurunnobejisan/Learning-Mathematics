@@ -14,6 +14,7 @@ import 'package:jisan/convetor&currency/dashPages/currency.dart';
 import 'package:jisan/convetor&currency/dashPages/time.dart';
 import 'package:jisan/popmore/about%20me.dart';
 import 'package:jisan/popmore/listview.dart';
+import 'package:jisan/popmore/privacy_policy.dart';
 import 'package:jisan/screens/product.dart';
 import 'package:jisan/screens/product_item.dart';
 import 'package:jisan/screens/product_page.dart';
@@ -620,7 +621,12 @@ class _PopupMenuContentState extends State<PopupMenuContent>
                             ),
 
                             GestureDetector(
-                              onTap: () => _closePopup("গোপনীয়তা নীতি"),
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => PrivacyPolicy()));
+                              },
                               child: Row(
                                 children: [
                                   Container(

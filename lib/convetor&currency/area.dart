@@ -45,11 +45,11 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(100),
+      padding: const EdgeInsets.all(20),
       child: ListView(
         children: [
-          Image.network(
-            'https://i0.wp.com/www.renebay.com/wp-content/uploads/2021/03/red-bricks-m.jpg?fit=500%2C500&ssl=1',
+          Image.asset(
+            'assets/images/area.png',
             width: 100,
             height: 150,
           ),
