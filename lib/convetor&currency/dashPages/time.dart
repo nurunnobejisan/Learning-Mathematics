@@ -42,7 +42,7 @@ class _AreaConvertState extends State<TimeConvert> {
           title: Text("সময় অঞ্চলসমূহ"),
           backgroundColor: Colors.transparent,
           elevation: 0,
-          foregroundColor: Colors.black54,
+          foregroundColor: Colors.indigoAccent,
         ),
         body: ListView(
           children: [
@@ -56,7 +56,7 @@ class _AreaConvertState extends State<TimeConvert> {
                 style: GoogleFonts.ibmPlexSans(
                   letterSpacing: 0,
                   fontSize: 16,
-                  color: Colors.black54,
+                  color: Colors.indigoAccent,
                   fontWeight: FontWeight.w500,
                 ),
               ),

@@ -8,6 +8,7 @@ import 'package:jisan/BMI/input_page.dart';
 import 'package:jisan/Game/game.dart';
 import 'package:jisan/Mathgame/math.dart';
 import 'package:jisan/convetor&currency/Convetor.dart';
+import 'package:jisan/convetor&currency/area.dart';
 import 'package:jisan/convetor&currency/button.dart';
 import 'package:jisan/convetor&currency/dashPages/currency.dart';
 import 'package:jisan/convetor&currency/dashPages/time.dart';
@@ -346,6 +347,8 @@ class _LandingScreenState extends State<LandingScreen> {
                                         );
                                       },
                                     ),
+
+
                                     GestureDetector(
                                       child: ListTile(
                                           'বিশ্ব ঘড়ি',
@@ -360,6 +363,25 @@ class _LandingScreenState extends State<LandingScreen> {
                                           context,
                                           MaterialPageRoute(
                                             builder: (context) =>const TimeConvert(),
+                                          ),
+                                        );
+                                      },
+                                    ),
+
+                                    GestureDetector(
+                                      child: ListTile(
+                                          'এলাকার ক্ষমতা গণনা',
+                                          Image.asset(
+                                            'assets/images/area.png',
+                                            height: 82,
+                                            width: 80,
+                                          ),
+                                          const Color(0xFF6FC5DA)),
+                                      onTap: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => Home2(),
                                           ),
                                         );
                                       },

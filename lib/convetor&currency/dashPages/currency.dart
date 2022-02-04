@@ -40,7 +40,7 @@ class _AreaConvertState extends State<CurrencyConvert> {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
-          foregroundColor: Colors.black54,
+          foregroundColor: Colors.indigoAccent,
           title: Text("মুদ্রা"),
         ),
         body: Column(
@@ -59,7 +59,7 @@ class _AreaConvertState extends State<CurrencyConvert> {
                     style: GoogleFonts.ibmPlexSans(
                       letterSpacing: 0,
                       fontSize: 25,
-                      color: Colors.black54,
+                      color: Colors.indigoAccent,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
