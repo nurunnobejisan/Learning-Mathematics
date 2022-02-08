@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../screens/landing_screen.dart';
+
 
 
 class convector extends StatefulWidget {
@@ -33,13 +35,27 @@ class _convector extends State<convector> {
       home: Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
+
           title: const Text("তাপমাত্রা রূপান্তরকারী"),
           backgroundColor: Colors.indigoAccent,
+
         ),
         body: Column(
           children: <Widget>[
             Column(
               children: [
+                IconButton(
+                  icon: const Icon(
+                    Icons.arrow_back_ios,
+                    color: Colors.black,
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => const LandingScreen(),
+                        ));
+                  },),
                 Container(
                   child: Input(myController: myController),
 

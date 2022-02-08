@@ -1,7 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_share/flutter_share.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jisan/Age/views/home.dart';
 import 'package:jisan/BMI/input_page.dart';
@@ -22,7 +21,7 @@ import 'package:jisan/utils/widget_functions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:analog_clock/analog_clock.dart';
-import 'package:get/get.dart';
+
 
 class LandingScreen extends StatefulWidget {
   const LandingScreen({Key? key}) : super(key: key);
@@ -45,7 +44,6 @@ class _LandingScreenState extends State<LandingScreen> {
     final TextTheme textTheme = Theme.of(context).textTheme;
     return SafeArea(
       child: Scaffold(
-
         resizeToAvoidBottomInset: false,
         body: LayoutBuilder(
           builder: (context, constraints) {
@@ -60,18 +58,18 @@ class _LandingScreenState extends State<LandingScreen> {
                           items: [
                             Container(
                               margin:
-                              const EdgeInsets.only(top: 10, bottom: 10),
+                                  const EdgeInsets.only(top: 10, bottom: 10),
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),
                                   color: Colors.grey,
                                   image: const DecorationImage(
-                                      image: AssetImage(
-                                          "assets/images/Qutes.png"),
+                                      image:
+                                          AssetImage("assets/images/Qutes.png"),
                                       fit: BoxFit.fill)),
                             ),
                             Container(
                                 margin:
-                                const EdgeInsets.only(top: 10, bottom: 10),
+                                    const EdgeInsets.only(top: 10, bottom: 10),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),
                                   color: Colors.grey,
@@ -82,7 +80,7 @@ class _LandingScreenState extends State<LandingScreen> {
                                 )),
                             Container(
                                 margin:
-                                const EdgeInsets.only(top: 10, bottom: 10),
+                                    const EdgeInsets.only(top: 10, bottom: 10),
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(20),
                                     color: Colors.grey,
@@ -92,7 +90,7 @@ class _LandingScreenState extends State<LandingScreen> {
                                         fit: BoxFit.fill))),
                             Container(
                                 margin:
-                                const EdgeInsets.only(top: 10, bottom: 10),
+                                    const EdgeInsets.only(top: 10, bottom: 10),
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(20),
                                     color: Colors.grey,
@@ -102,7 +100,7 @@ class _LandingScreenState extends State<LandingScreen> {
                                         fit: BoxFit.fill))),
                             Container(
                                 margin:
-                                const EdgeInsets.only(top: 10, bottom: 10),
+                                    const EdgeInsets.only(top: 10, bottom: 10),
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(20),
                                     color: Colors.grey,
@@ -118,10 +116,19 @@ class _LandingScreenState extends State<LandingScreen> {
                                     color: Colors.grey,
                                     image: const DecorationImage(
                                         image: AssetImage(
+                                            "assets/images/Qutes (7).png"),
+                                        fit: BoxFit.fill))),
+                            Container(
+                                margin:
+                                    const EdgeInsets.only(top: 10, bottom: 10),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    color: Colors.grey,
+                                    image: const DecorationImage(
+                                        image: AssetImage(
                                             "assets/images/Qutes (6).png"),
                                         fit: BoxFit.fill))),
                           ],
-
                           options: CarouselOptions(
                             height: 250.0,
                             enlargeCenterPage: true,
@@ -130,14 +137,12 @@ class _LandingScreenState extends State<LandingScreen> {
                             autoPlayCurve: Curves.fastOutSlowIn,
                             enableInfiniteScroll: true,
                             autoPlayAnimationDuration:
-                            const Duration(milliseconds: 800),
+                                const Duration(milliseconds: 800),
                             viewportFraction: 0.7,
                             pageSnapping: true,
                           ),
                         ),
-
                       ],
-
                     )),
                 Container(
                   width: constraints.maxWidth,
@@ -170,14 +175,14 @@ class _LandingScreenState extends State<LandingScreen> {
                                   child: Center(),
                                 ),
                                 InkWell(
-                                    child: MyPopupMenu(
-                                      child: Icon(
-                                        Icons.menu,
-                                        key: GlobalKey(),
-                                        color: Colors.black,
-                                        size: 24,
-                                      ),
+                                  child: MyPopupMenu(
+                                    child: Icon(
+                                      Icons.menu,
+                                      key: GlobalKey(),
+                                      color: Colors.black,
+                                      size: 24,
                                     ),
+                                  ),
                                 ),
                                 addHorizontalSpace(10),
                               ],
@@ -189,24 +194,23 @@ class _LandingScreenState extends State<LandingScreen> {
                               child: Row(
                                 children: PRODUCT_DATA
                                     .map((data) => InkWell(
-                                  onTap: () {
-                                    _focusNode.unfocus();
-                                    Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                ProductPage(
-                                                    productData:
-                                                    data)));
-                                  },
-                                  child: ProductItem(
-                                    width: constraints.maxWidth * 0.50,
-                                    productData: data,
-                                  ),
-                                ))
+                                          onTap: () {
+                                            _focusNode.unfocus();
+                                            Navigator.of(context).push(
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        ProductPage(
+                                                            productData:
+                                                                data)));
+                                          },
+                                          child: ProductItem(
+                                            width: constraints.maxWidth * 0.50,
+                                            productData: data,
+                                          ),
+                                        ))
                                     .toList(),
                               ),
                             ),
-
                           ],
                         ),
                         //sir problem on tap
@@ -269,7 +273,8 @@ class _LandingScreenState extends State<LandingScreen> {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                            builder: (context) => const Calculator(),
+                                            builder: (context) =>
+                                                const Calculator(),
                                           ),
                                         );
                                       },
@@ -288,7 +293,7 @@ class _LandingScreenState extends State<LandingScreen> {
                                           context,
                                           MaterialPageRoute(
                                             builder: (context) =>
-                                            const HomePage(),
+                                                const HomePage(),
                                           ),
                                         );
                                       },
@@ -307,7 +312,7 @@ class _LandingScreenState extends State<LandingScreen> {
                                           context,
                                           MaterialPageRoute(
                                             builder: (context) =>
-                                            const InputPage(),
+                                                const InputPage(),
                                           ),
                                         );
                                       },
@@ -343,13 +348,12 @@ class _LandingScreenState extends State<LandingScreen> {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                            builder: (context) =>const CurrencyConvert(),
+                                            builder: (context) =>
+                                                const CurrencyConvert(),
                                           ),
                                         );
                                       },
                                     ),
-
-
                                     GestureDetector(
                                       child: ListTile(
                                           'বিশ্ব ঘড়ি',
@@ -363,12 +367,12 @@ class _LandingScreenState extends State<LandingScreen> {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                            builder: (context) =>const TimeConvert(),
+                                            builder: (context) =>
+                                                const TimeConvert(),
                                           ),
                                         );
                                       },
                                     ),
-
                                     GestureDetector(
                                       child: ListTile(
                                           'এলাকার ক্ষমতা গণনা',
@@ -404,7 +408,7 @@ class _LandingScreenState extends State<LandingScreen> {
 
   ListTile(String name, Image iconName, Color bgColor) {
     return Padding(
-        padding: const EdgeInsets.only(right: 10,  left: 5),
+        padding: const EdgeInsets.only(right: 10, left: 5),
         child: Column(children: [
           const SizedBox(height: 20),
           Container(
@@ -551,8 +555,8 @@ class _PopupMenuContentState extends State<PopupMenuContent>
                 Positioned(
                   left: 0,
                   right:
-                  (MediaQuery.of(context).size.width - widget.position.dx) -
-                      widget.size.width,
+                      (MediaQuery.of(context).size.width - widget.position.dx) -
+                          widget.size.width,
                   top: widget.position.dy,
                   child: AnimatedBuilder(
                     animation: _animationController,
@@ -659,7 +663,9 @@ class _PopupMenuContentState extends State<PopupMenuContent>
                             ),
 
                             GestureDetector(
-                              onTap: () => _closePopup("এখন শেয়ার করুন"),
+                              onTap: () {
+                                share();
+                              },
                               child: Row(
                                 children: [
                                   Container(
@@ -692,11 +698,36 @@ class _PopupMenuContentState extends State<PopupMenuContent>
 
                             GestureDetector(
                               onTap: () {
-                                if (Platform.isAndroid) {
-                                  SystemNavigator.pop();
-                                } else {
-                                  exit(0);
-                                }
+                                showDialog(
+                                    context: context,
+                                    builder: (context) {
+                                      return AlertDialog(
+                                        title: const Text(
+                                            "Exit from গণিত শিক্ষক"),
+                                        content: const Text(
+                                            "Are you sure want to exit"),
+                                        actions: [
+                                          FlatButton(
+                                            onPressed: () {
+                                              Navigator.pop(context);
+                                            },
+                                            child: const Text("No",
+                                                style: TextStyle(
+                                                    fontSize: 20)),
+                                          ),
+                                          FlatButton(
+                                            onPressed: () {
+                                              exit(0);
+                                            },
+                                            child: const Text(
+                                              "Yes",
+                                              style:
+                                              TextStyle(fontSize: 20),
+                                            ),
+                                          ),
+                                        ],
+                                      );
+                                    });
                               },
                               child: Row(
                                 children: [
@@ -730,7 +761,7 @@ class _PopupMenuContentState extends State<PopupMenuContent>
                             ),
 
                             GestureDetector(
-                              onTap: () => _closePopup("সহায়তা পান"),
+                              onTap: () => _closePopup("Upcoming"),
                               child: Container(
                                 width: double.maxFinite,
                                 height: 70,
@@ -743,20 +774,8 @@ class _PopupMenuContentState extends State<PopupMenuContent>
                                 child: Center(
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
-                                    children: const [
-                                      Icon(
-                                        Icons.messenger_outline_rounded,
-                                        color: Color(0xff1e93ad),
-                                        size: 26,
-                                      ),
-
-                                      Text(
-                                        "সহায়তা পান",
-                                        style: TextStyle(
-                                            color: Color(0xff1e93ad),
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.w600),
-                                      ),
+                                    children: [
+                                      Center(child: Image.asset("assets/images/logo.png", height: 50,)),
                                     ],
                                   ),
                                 ),
@@ -784,6 +803,15 @@ class _PopupMenuContentState extends State<PopupMenuContent>
     });
   }
 }
+Future<void> share() async {
+  await FlutterShare.share(
+      title: 'Change your Brain With Us',
+      text: 'এটা শিক্ষামূলক অ্যাপ যা আমরা আমাদের বাচ্চাদের জন্য , এবং আমরা মনে করি আপনার পরিবারও এটি উপভোগ করবে!',
+      linkUrl:
+      'https://play.google.com/store/apps/details?id=com.example.jisan"',
+      chooserTitle: 'Example Chooser Title');
+}
+
 
 class TimeCard extends StatelessWidget {
   const TimeCard({
@@ -851,9 +879,9 @@ class TimeCard extends StatelessWidget {
 class GridTile extends StatelessWidget {
   const GridTile(
       {Key? key,
-        required this.name,
-        required this.img,
-        required this.whenTapped})
+      required this.name,
+      required this.img,
+      required this.whenTapped})
       : super(key: key);
 
   final String name;
@@ -882,7 +910,7 @@ class GridTile extends StatelessWidget {
             ),
             Padding(
               padding:
-              const EdgeInsets.symmetric(horizontal: 4.0, vertical: 8.0),
+                  const EdgeInsets.symmetric(horizontal: 4.0, vertical: 8.0),
               child: Text(
                 name,
                 overflow: TextOverflow.clip,

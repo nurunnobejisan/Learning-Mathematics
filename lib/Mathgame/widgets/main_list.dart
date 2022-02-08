@@ -4,6 +4,7 @@ import 'package:jisan/Mathgame/pages/division_page.dart';
 import 'package:jisan/Mathgame/pages/multiplication_page.dart';
 import 'package:jisan/Mathgame/pages/extraction_page.dart';
 import 'package:jisan/Mathgame/pages/addition_page.dart';
+import 'package:jisan/screens/landing_screen.dart';
 
 class MainList extends StatelessWidget {
   const MainList({Key? key}) : super(key: key);
@@ -17,6 +18,18 @@ class MainList extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        IconButton(
+          icon: const Icon(
+            Icons.arrow_back_ios,
+            color: Colors.white,
+          ),
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (BuildContext context) => const LandingScreen(),
+                ));
+          },),
         SizedBox(
           height: yourHeight,
           child: InkWell(

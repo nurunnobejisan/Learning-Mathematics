@@ -7,6 +7,8 @@ import 'package:jisan/Game/levels/esay.dart';
 import 'package:jisan/Game/levels/hard.dart';
 import 'package:jisan/Game/levels/normal.dart';
 
+import '../../screens/landing_screen.dart';
+
 
 class Starttogame extends StatefulWidget {
   const Starttogame({Key? key}) : super(key: key);
@@ -23,6 +25,19 @@ class _StarttogameState extends State<Starttogame> {
       body: SafeArea(
         child: Column(
           children: <Widget>[
+            IconButton(
+              icon: const Icon(
+                Icons.arrow_back_ios,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) => const LandingScreen(),
+                    ));
+              },),
+
             Container(
                 decoration: BoxDecoration(
                     boxShadow: [

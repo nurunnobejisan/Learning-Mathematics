@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:jisan/screens/landing_screen.dart';
 
 
 class AppName extends StatelessWidget {
@@ -14,18 +15,18 @@ class AppName extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Container(
-            alignment: Alignment.centerRight,
-            padding: const EdgeInsets.only(left: 20),
-            child: const Text("Math",
-              style: TextStyle(
-              fontSize: 28, 
-              fontWeight: FontWeight.w700, 
-              fontFamily: 'roboto', 
-              color: Colors.white,
-              ),
+          IconButton(
+            icon: const Icon(
+              Icons.arrow_back_ios,
+              color: Colors.black,
             ),
-          ),
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => const LandingScreen(),
+                  ));
+            },),
         ],
       ),
     );

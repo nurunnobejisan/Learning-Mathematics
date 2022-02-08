@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:jisan/screens/landing_screen.dart';
 
 
 
@@ -13,7 +14,7 @@ class Home2 extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('এলাকার ক্ষমতা গণনা করুন'),
+          title: const Text('এলাকার ক্ষমতা গণনা করুন'),
           backgroundColor: Colors.indigoAccent,
         ),
         body: Home(),
@@ -48,47 +49,59 @@ class _HomeState extends State<Home> {
       padding: const EdgeInsets.all(20),
       child: ListView(
         children: [
+          IconButton(
+            icon: const Icon(
+              Icons.arrow_back_ios,
+              color: Colors.black,
+            ),
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => const LandingScreen(),
+                  ));
+            },),
           Image.asset(
             'assets/images/area.png',
             width: 100,
             height: 150,
           ),
-          Center(
+          const Center(
               child: Text(
                 'ইনপুট ডাটা',
                 style: TextStyle(fontSize: 20),
               )),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Center(
             child: TextField(
               controller: ctl_width,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                   labelText: 'প্রস্থ (m.)', border: OutlineInputBorder()),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Center(
             child: TextField(
               controller: ctl_length,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                   labelText: 'দৈর্ঘ্য (m.)', border: OutlineInputBorder()),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Center(
             child: TextField(
               controller: ctl_height,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                   labelText: 'উচ্চতা (m.)', border: OutlineInputBorder()),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           ElevatedButton(
@@ -106,11 +119,11 @@ class _HomeState extends State<Home> {
                   " এলাকার আকার $v1 x $v2 x $v3\nমোট ক্যাপাসিটি: $calc ঘনমিটার";
                 });
               },
-              child: Text(
+              child: const Text(
                 'গণনা',
                 style: TextStyle(fontSize: 20),
               )),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Center(
@@ -118,7 +131,7 @@ class _HomeState extends State<Home> {
               children: [
                 Text(
                   result.text,
-                  style: TextStyle(fontSize: 16, color: Colors.indigoAccent),
+                  style: const TextStyle(fontSize: 16, color: Colors.indigoAccent),
                 ),
               ],
             ),

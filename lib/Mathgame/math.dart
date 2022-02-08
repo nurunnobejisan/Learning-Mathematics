@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jisan/Mathgame/constants/app_constant.dart';
-import 'package:jisan/Mathgame/constants/app_strings.dart';
 import 'package:jisan/Mathgame/widgets/main_list.dart';
 
 class Math extends StatefulWidget {

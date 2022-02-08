@@ -3,6 +3,7 @@ import 'package:jisan/Game/animation/animation.dart';
 import 'package:jisan/Game/views/playgame.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jisan/screens/landing_screen.dart';
 
 
 class MyHomePage extends StatefulWidget {
@@ -31,9 +32,11 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(  
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+
             Container(
               decoration:  BoxDecoration(
                 boxShadow: [
+
                   BoxShadow(
                     color: const Color(0xFF4F2FF8).withAlpha(40),
                     blurRadius: 100,
@@ -43,7 +46,18 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               child: AnimationImage(Imagefullname:'images/playing-hand.png',width: 340,height: 340),
             ),
-
+            IconButton(
+              icon: const Icon(
+                Icons.arrow_back_ios,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) => const LandingScreen(),
+                    ));
+              },),
             Container(
               margin: const EdgeInsets.only(bottom: 10.0,left: 20.0),
               child:Row(
@@ -57,11 +71,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Container(
               margin:EdgeInsets.only(right:160.0.w,bottom: 60.0.h),
-              child:Text("সংখ্যা",style: TextStyle(color: Colors.white,fontSize: 30.0.sp,fontWeight: FontWeight.bold)),
+              child:Text("সংখ্যা",style: TextStyle(color: Colors.white,fontSize: 39.0.sp,fontWeight: FontWeight.bold)),
             ),
-            SizedBox(
-              height:30.0.h,
-            ),
+
+
             SizedBox(
               width: 335.w,
               child: TextButton(
