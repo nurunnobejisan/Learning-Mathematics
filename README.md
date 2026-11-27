@@ -2,6 +2,10 @@
 
 An all-in-one Flutter math app: timed math quizzes and games, BMI and age calculators, and unit and currency converters in a single mobile app.
 
+## Screenshot
+
+![Onboarding screen](screenshots/onboarding.png)
+
 ## Features
 
 - Math quiz game with easy, normal, and hard levels and success/wrong feedback
